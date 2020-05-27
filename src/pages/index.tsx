@@ -1,8 +1,3 @@
-import * as React from 'react';
-import { homedir } from 'os';
-
-const Home: React.FC = ({}) => {
-  return <div></div>;
-};
+import Home from './Home';
 
 export default Home;
