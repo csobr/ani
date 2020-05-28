@@ -1,5 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Viga&display=swap');
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Viga', sans-serif;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%;
+  body {
+    font-family: 'Viga', sans-serif;
+    font-size: 1.6rem;
+  }
+}
+main {
+  display: grid;
+  width: 100%;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  top: 3rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  a {
+    color: #000000;
+    text-decoration: none;
+    padding-left: 1rem;
+  }
+}
+.first-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20vh;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.header {
+  grid-column: 1/2;
+  grid-row: 2/2;
+  width: 50rem;
+  justify-self: center;
+
+  h1 {
+    font-size: 4.8rem;
+    text-transform: uppercase;
+  }
+}
+.first-img {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  margin: auto;
+  img {
+    width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.title {
+  width: 342px;
+  height: 4rem;
+  font-size: 1.8rem;
+  line-height: 24px;
+  margin: auto;
+}
+.text {
+  margin: auto;
+  width: 33rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-family: 'Open-Sans', sans-serif;
 }
