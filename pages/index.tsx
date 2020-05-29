@@ -25,6 +25,31 @@ const Home: React.FC = ({}) => {
           </p>
         </div>
       </div>
+      <div className="second-view">
+        <h2>Vad säger forskningen?</h2>
+        <div className="second-img">
+          <img src="./images/brain.png" alt="brain"></img>
+          <p className="title">Det här händer i din hjärna.</p>
+          <ul>
+            <li>
+              {' '}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
+              Tortor amet nulla semper enim, praesent sit tristique.
+            </li>
+            <li>
+              {' '}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
+              Tortor amet nulla semper enim, praesent sit tristique.
+            </li>
+            <li>
+              {' '}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
+              Tortor amet nulla semper enim, praesent sit tristique.
+            </li>
+          </ul>
+          <p className="source">-Source</p>
+        </div>
+      </div>
     </main>
   );
 };
