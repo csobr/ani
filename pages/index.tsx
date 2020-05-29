@@ -26,23 +26,35 @@ const Home: React.FC = ({}) => {
         </div>
       </div>
       <div className="second-view">
+        {' '}
         <h2>Vad säger forskningen?</h2>
-        <div className="second-img">
+        <div className="second-left">
+          <img src="./images/yello.jpg" alt="swirl" />
+          <p className="title-second">Lorem ipsum dolor sit amet, consectetur.</p>
+          <p className="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum at nunc cursus non. Tincidunt cras
+            tellus enim feugiat mi enim aliquet integer. Dolor laoreet tincidunt quis sodales montes, vestibulum lorem
+            turpis varius. Gravida rhoncus, lacus faucibus in amet, euismod.
+            <br />
+            <br />
+            Vel neque dictum egestas amet. Enim quisque placerat commodo viverra. Ut at accumsan id lacus, diam. Quis
+            congue adipiscing a arcu amet luctus. Enim maecenas dictum purus sit nam in urna eu. Scelerisque porttitor
+            tellus libero facilisis. Bibendum nulla ornare cras blandit egestas.
+          </p>
+        </div>
+        <div className="second-right">
           <img src="./images/brain.png" alt="brain"></img>
-          <p className="title">Det här händer i din hjärna.</p>
+          <p className="title-second">Det här händer i din hjärna.</p>
           <ul>
             <li>
-              {' '}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
               Tortor amet nulla semper enim, praesent sit tristique.
             </li>
             <li>
-              {' '}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
               Tortor amet nulla semper enim, praesent sit tristique.
             </li>
             <li>
-              {' '}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
               Tortor amet nulla semper enim, praesent sit tristique.
             </li>
