@@ -101,6 +101,9 @@ nav {
   display: grid;
   grid-gap: 4rem;
   margin: 1rem;
+  @media (max-width: 468px) {
+    grid-gap: 0;
+  }
 }
 .second-left {
   grid-row: 2/2;
