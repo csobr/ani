@@ -36,8 +36,8 @@ const Home: React.FC = ({}) => {
         <div className="second-left">
           <picture>
             <source srcSet="./images/brain.png" type="image/png" />
+            <img src="./images/brain.png" alt="brain"></img>
           </picture>
-          <img src="./images/brain.png" alt="brain"></img>
           <p className="title-second">Det här händer i din hjärna.</p>
           <ul>
             <li>
@@ -58,9 +58,10 @@ const Home: React.FC = ({}) => {
 
         <div className="second-right">
           <picture>
-            <source srcSet="./images/yello.png" type="image/jpeg" />
+            <source srcSet="./images/yello.jpg" type="image/jpeg" />
+            <img src="./images/yello.jpg" alt="swirl" />
           </picture>
-          <img src="./images/yello.jpg" alt="swirl" />
+
           <p className="title-second">Lorem ipsum dolor sit amet, consectetur.</p>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum at nunc cursus non. Tincidunt cras
