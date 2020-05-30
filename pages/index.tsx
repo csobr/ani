@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
+import {TweenMax, TimelineMax} from 'gsap';
 
 const Home: React.FC = ({}) => {
+  let firstView = React.useRef<HTMLDivElement>(null);
+  let tl = new TimelineMax();
+  useEffect(() => {
+    TweenMax.from(firstView, 0.1, {opacity: 0});
+    tl.to(firstView, 1, {
+      opacity: 1,
+    });
+  });
   return (
     <main className="main">
       <nav>
@@ -12,7 +21,11 @@ const Home: React.FC = ({}) => {
           <a>Ordna</a>
         </Link>
       </nav>
-      <div className="first-view">
+      <div
+        className="first-view"
+        ref={(element) => {
+          firstView = element;
+        }}>
         <div className="header">
           <h1>Lorem ipsum dolor sit amet feugiat tempor</h1>
         </div>
