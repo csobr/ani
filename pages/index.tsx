@@ -17,7 +17,11 @@ const Home: React.FC = ({}) => {
           <h1>Lorem ipsum dolor sit amet feugiat tempor</h1>
         </div>
         <div className="first-img">
-          <img className="pink" src="./images/inred.jpg" alt="pink"></img>
+          <picture>
+            <source className="pink" srcSet="./images/inred.jpg" type="image/jpeg" />
+            <img className="pink" src="./images/inred.jpg" alt="pink" />
+          </picture>
+
           <p className="title">Lorem ipsum dolor sit amet, consectetur.</p>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet feugiat tempor, ipsum, facilisi aliquet.
@@ -30,6 +34,9 @@ const Home: React.FC = ({}) => {
       </div>
       <div className="second-view">
         <div className="second-left">
+          <picture>
+            <source srcSet="./images/brain.png" type="image/png" />
+          </picture>
           <img src="./images/brain.png" alt="brain"></img>
           <p className="title-second">Det här händer i din hjärna.</p>
           <ul>
@@ -50,6 +57,9 @@ const Home: React.FC = ({}) => {
         </div>
 
         <div className="second-right">
+          <picture>
+            <source srcSet="./images/yello.png" type="image/jpeg" />
+          </picture>
           <img src="./images/yello.jpg" alt="swirl" />
           <p className="title-second">Lorem ipsum dolor sit amet, consectetur.</p>
           <p className="text">
