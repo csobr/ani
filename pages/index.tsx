@@ -1,17 +1,17 @@
 import React, {useEffect} from 'react';
 import Link from 'next/link';
-import {TweenMax, TimelineMax, Power3} from 'gsap';
+import {TweenMax, TimelineLite, Power3} from 'gsap';
 
 const Home: React.FC = ({}) => {
-  let firstView = React.useRef<HTMLDivElement>(null);
-  let tl = new TimelineMax();
+  const firstView = React.useRef<HTMLDivElement>(null);
+
+  let tl = new TimelineLite();
   useEffect(() => {
-    TweenMax.from(firstView.current, 0.2, {opacity: 0});
     tl.to(firstView.current, 1, {
       opacity: 1,
       y: -50,
       ease: Power3.easeOut,
-      delay: 0.2,
+      delay: 0.1,
     });
   });
   return (
