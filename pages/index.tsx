@@ -3,15 +3,20 @@ import Link from 'next/link';
 import {TweenMax, TimelineLite, Power3} from 'gsap';
 
 const Home: React.FC = ({}) => {
-  const firstView = React.useRef<HTMLDivElement>(null);
+  const firstHeadline = React.useRef<HTMLDivElement>(null);
+  const firstImg = React.useRef<HTMLDivElement>(null);
 
   let tl = new TimelineLite();
   useEffect(() => {
-    tl.to(firstView.current, 1, {
+    tl.to(firstHeadline.current, 1, {
       opacity: 1,
       y: -50,
       ease: Power3.easeOut,
-      delay: 0.1,
+    });
+    tl.to(firstImg.current, 1, {
+      opacity: 1,
+      y: -50,
+      ease: Power3.easeOut,
     });
   });
   return (
@@ -24,15 +29,19 @@ const Home: React.FC = ({}) => {
           <a>Ordna</a>
         </Link>
       </nav>
-      <div
-        className="first-view"
-        ref={(element) => {
-          firstView.current = element;
-        }}>
-        <div className="header">
+      <div className="first-view">
+        <div
+          className="headline"
+          ref={(element) => {
+            firstHeadline.current = element;
+          }}>
           <h1>Lorem ipsum dolor sit amet feugiat tempor</h1>
         </div>
-        <div className="first-img">
+        <div
+          className="first-img"
+          ref={(element) => {
+            firstImg.current = element;
+          }}>
           <picture>
             <source className="pink" srcSet="./images/inred.jpg" type="image/jpeg" />
             <img className="pink" src="./images/inred.jpg" alt="pink" />
@@ -45,7 +54,7 @@ const Home: React.FC = ({}) => {
           </p>
         </div>
       </div>{' '}
-      <div className="header-second">
+      <div className="headline-second">
         <h2>Vad säger forskningen?</h2>
       </div>
       <div className="second-view">
@@ -91,6 +100,7 @@ const Home: React.FC = ({}) => {
           </p>
         </div>
       </div>
+      <div className="third-view"></div>
     </main>
   );
 };

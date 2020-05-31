@@ -47,13 +47,13 @@ nav {
   align-items: center;
   grid-template-rows: 100vh;
   margin-bottom: 5rem;
-  opacity: 0;
 }
-.header {
+.headline {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: center;
   width: 50rem;
+  opacity: 0;
 
   h1 {
     font-size: 4.8rem;
@@ -70,6 +70,7 @@ nav {
 .first-img {
   grid-column: 2/2;
   margin: auto;
+  opacity: 0;
 
   img {
     width: 50rem;
@@ -102,6 +103,7 @@ nav {
   display: grid;
   grid-gap: 4rem;
   margin: 1rem;
+  width: 100%;
   @media (max-width: 468px) {
     grid-gap: 0;
   }
@@ -154,7 +156,7 @@ nav {
   @media (max-width: 468px) {
   }
 }
-.header-second {
+.headline-second {
   margin-left: 4rem;
 
   h2 {
