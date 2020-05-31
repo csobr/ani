@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import Link from 'next/link';
-import {TweenMax, TimelineLite, Power3} from 'gsap';
+import {TimelineLite, Power3} from 'gsap';
 
 const Home: React.FC = ({}) => {
   const firstHeadline = React.useRef<HTMLDivElement>(null);
@@ -22,12 +21,9 @@ const Home: React.FC = ({}) => {
   return (
     <main className="main">
       <nav>
-        <Link href="/">
-          <a>Om</a>
-        </Link>
-        <Link href="/">
-          <a>Ordna</a>
-        </Link>
+        {/*         slide in view from right  */}
+        <a>ani</a>
+        <a>Om</a>
       </nav>
       <div className="first-view">
         <div
@@ -100,7 +96,11 @@ const Home: React.FC = ({}) => {
           </p>
         </div>
       </div>
-      <div className="third-view"></div>
+      <div className="third-view">
+        <div className="headline-third">
+          <h3>Du</h3>
+        </div>
+      </div>
     </main>
   );
 };

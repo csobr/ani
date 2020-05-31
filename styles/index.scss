@@ -81,17 +81,17 @@ nav {
   }
 }
 .title {
-  width: 35rem;
-  height: 4rem;
-  font-size: 1.8rem;
+  width: 40rem;
+  padding: 2rem 0 2rem 0;
+  font-size: 2rem;
   line-height: 24px;
   margin: auto;
 }
 .text {
   margin: auto;
-  width: 33rem;
-  line-height: 2rem;
-  font-size: 1.4rem;
+  width: 40rem;
+  line-height: 2.3rem;
+  font-size: 1.6rem;
   font-weight: 300;
   font-family: 'Open-Sans', sans-serif;
   @media (max-width: 468px) {
@@ -122,16 +122,17 @@ nav {
   ul {
     width: 40rem;
     font-family: 'Open sans', sans-serif;
-    font-size: 1.4rem;
-    line-height: 2.5rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
     list-style: square;
   }
   li {
-    height: 10rem;
+    height: 12rem;
   }
   .source {
     font-size: 1.6rem;
     font-family: 'Open sans', sans-serif;
+    margin-bottom: 3rem;
   }
   @media (max-width: 468px) {
     grid-row: 1/2;
@@ -156,15 +157,17 @@ nav {
   @media (max-width: 468px) {
   }
 }
-.headline-second {
+.headline-second,
+.headline-third {
   margin-left: 4rem;
 
-  h2 {
-    font-size: 3.2rem;
+  h2,
+  h3 {
+    font-size: 4rem;
   }
 }
 .title-second {
   font-size: 2rem;
-  height: 5rem;
+  padding: 2rem 0 2rem 0;
   margin: 0;
 }
