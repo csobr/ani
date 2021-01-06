@@ -34,6 +34,7 @@
     "pretty": "prettier --write \"./**/*.{js,tsx,json}\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "csobr",
+  "license": "ISC",
+  "repository": "https://github.com/csobr/Ani.git"
 }
