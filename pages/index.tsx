@@ -1,11 +1,10 @@
 import React from 'react';
 
 const Home: React.FC = ({}) => {
-
   return (
     <main className="main">
       <nav>
-        <a>ani</a>
+        <img src = "logo.png" alt = "logo"></img>
         <a>Om</a>
       </nav>
       <section className="first-view">
@@ -16,14 +15,16 @@ const Home: React.FC = ({}) => {
           <div className="rectangle" />
           <div className="triangel" />
           <div className="circle" />
-          <div className = "sqaure"/>
+          <div className="sqaure" />
         </div>
-       
-        <p>Under tonårstiden sker det många förändringar i livet. Man kommer in puberteten och kroppen förändras 
-mycket. Även hjärnan utvecklas under 
-den här tiden. Förstå vad som händer i
-din hjärna med hjälp av forsking.</p>
-     </section>
+        <div className= "app-description">
+        <p>
+            Under tonårstiden sker det många förändringar i livet. Man kommer in puberteten och kroppen förändras mycket.
+            Även hjärnan utvecklas under den här tiden. Förstå vad som händer i din hjärna med hjälp av forsking.
+        </p>
+        </div>
+      </section>
+      <section></section>
     </main>
   );
 };
