@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Viga&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+--background: #F0EEE8;
+--primary: #000000;
+--yellow: #F1D02C;
+--pink: #E88FA3;
+--green: #40A857;
+--red: #EB483D;
+
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--background);
+    height: 100%;
+    width: 100%; 
+     font-size: 62.5%;
+  overflow-x: hidden;
+  }
+
+
+main {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  margin: 1rem;
+}
+nav {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+ nav a {
+    color: #000000;
+    text-decoration: none;
+    padding-left: 1rem;
+    text-align: center;
+    width: 10rem;
+  }
+
+/* First View */
+.first-view {
+width: 100%;
+}
+.header{
+  width: 100%;
+  margin: 2rem;
+}
+h1{
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  width: 50%;
+  white-space: pre-wrap;
+  font-weight: 700;
+  z-index: 1;
+  position: absolute;
+}
+.shapes{
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+.rectangle{
+  margin-left: 1rem;
+  width: 8rem;
+  height: 4rem;
+  background: var(--yellow);
+}
+.triangel{
+  width: 0;
+  height: 0;
+  border-left: 5rem solid transparent;
+  border-right: 5rem solid transparent;
+  border-bottom: 10rem solid var(--green);
+}
+.circle{
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: var(--pink);
+}
+.sqaure{
+  width: 8rem;
+  height: 8rem;
+  background: var(--red);
+}
+
+p{
+letter-spacing: .1rem;
+font-size: 1.2rem;
+font-weight: 300;
+line-height: 2.2rem;
+}
