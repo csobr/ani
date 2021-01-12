@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anis",
+  "info": {
+    "name": "ani"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
