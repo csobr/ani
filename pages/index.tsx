@@ -1,16 +1,20 @@
+import React from 'react';
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second';
 import fetchFromCMS from 'lib/service';
-import React from 'react';
+import { GetStaticProps, GetStaticPropsContext } from 'next'
 
-const Home: React.FC = () => {
+type Props = {
+  content: any
+}
+const Home = ({ content }: Props) => {
   return (
     <main className="main">
       <nav>
         <img src="logo.png" alt="logo"></img>
         <a>Om</a>
       </nav>
-      <FirstItem />
+      <FirstItem content={content} />
       <SecondItem />
     </main>
   );
@@ -21,7 +25,7 @@ export default Home;
 
 
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const content = await fetchFromCMS('anis');
   return {
     props: { content },
