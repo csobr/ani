@@ -21,6 +21,7 @@ const SecondItem = ({ content }: Props) => {
 
             ))}
             <br />
+            <br />
             <h3>När försökte du sist imponera på för dina kompisar?</h3>
             <br />
             <form>

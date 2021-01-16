@@ -28,6 +28,7 @@ body {
 main {
   width: 100vw;
   height: 100vh;
+  letter-spacing: 0.05rem;
 }
 nav {
   width: 90%;
@@ -52,10 +53,10 @@ nav img {
 .first-view {
   display: grid;
   width: 100%;
+  margin: 1rem;
 }
 .header {
   width: 100%;
-  margin: 1rem;
 }
 h1 {
   font-size: 4.8rem;
@@ -104,37 +105,33 @@ h1 {
   bottom: 1rem;
   position: absolute;
 }
-.app-description {
-  margin: 1rem;
-}
-
-.first-view {
-  letter-spacing: 0.1rem;
+.app-description p {
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2.2rem;
 }
 .border {
-  margin: 0.8rem;
   height: 0.7rem;
   width: 7rem;
+  margin-bottom: 1rem;
 }
+/* second view */
+
 .second-view {
-  width: 100%;
   height: 100%;
   padding-top: 5rem;
+  margin: 1rem;
 }
 
 h2 {
-  margin-left: 0.8rem;
   font-size: 1.4rem;
 }
-.second-view p {
+
+.description p {
   font-size: 1.2rem;
-  line-height: 2rem;
   font-weight: 300;
+  line-height: 2rem;
   white-space: pre-line;
-  margin-left: 0.8rem;
 }
 h3 {
   font-size: 1.2rem;
