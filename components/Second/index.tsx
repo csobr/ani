@@ -1,4 +1,5 @@
 import React from 'react'
+import Border from '../../constants/border'
 
 type Props = {
     content: any;
@@ -6,20 +7,22 @@ type Props = {
 const SecondItem = ({ content }: Props) => {
     return (
         <div className="second-view">
-            <div className="border"></div>
+            <Border color={'#eb483d'} />
+            <br />
             {content.map((item) => (
 
                 <div key={item.id}>
                     <h2>{item.headline}</h2>
-
+                    <br></br>
                     <div className="description">
                         <p>{item.content}</p>
                     </div>
                 </div>
 
             ))}
-
+            <br />
             <h3>När försökte du sist imponera på för dina kompisar?</h3>
+            <br />
             <form>
                 <div>
                     <input type="checkbox" name="Idag" />
@@ -34,7 +37,7 @@ const SecondItem = ({ content }: Props) => {
                     <label htmlFor="igår">Minns inte</label>
                 </div>
             </form>
-        </div>
+        </div >
     )
 
 }

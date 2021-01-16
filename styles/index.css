@@ -7,30 +7,27 @@
 }
 
 :root {
---background: #F0EEE8;
---primary: #000000;
---yellow: #F1D02C;
---pink: #E88FA3;
---green: #40A857;
---red: #EB483D;
-
+  --background: #f0eee8;
+  --primary: #000000;
+  --yellow: #f1d02c;
+  --pink: #e88fa3;
+  --green: #40a857;
+  --red: #eb483d;
 }
 
 body {
-    font-family: 'Helvetica', sans-serif;
-    font-size: 1.6rem;
-    background-color: var(--background);
-    height: 100%;
-    width: 100%; 
-     font-size: 62.5%;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--background);
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
   overflow-x: hidden;
-  }
-
+}
 
 main {
   width: 100vw;
   height: 100vh;
-
 }
 nav {
   width: 90%;
@@ -41,49 +38,47 @@ nav {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-align-items: center;
+  align-items: center;
 }
- nav a {
+nav a {
   font-size: 1.4rem;
-    color: #000000;
-    text-decoration: none;
-  }
-nav img{
+  color: #000000;
+  text-decoration: none;
+}
+nav img {
   height: 2rem;
 }
 /* First View */
 .first-view {
   display: grid;
-width: 100%;
+  width: 100%;
 }
-.header{
+.header {
   width: 100%;
   margin: 1rem;
 }
-h1{
+h1 {
   font-size: 4.8rem;
   text-transform: uppercase;
   white-space: pre-wrap;
   font-weight: 900;
   z-index: 1;
   position: absolute;
-
 }
-.shapes{
+.shapes {
   width: 100%;
   z-index: 0;
   position: relative;
   height: 20rem;
 }
-.rectangle{
+.rectangle {
   margin-left: 1rem;
   width: 8rem;
   height: 4rem;
   background: var(--yellow);
-  top:0;
-
+  top: 0;
 }
-.triangel{
+.triangel {
   width: 0;
   height: 0;
   border-left: 4.5rem solid transparent;
@@ -91,9 +86,9 @@ h1{
   border-bottom: 7.5rem solid var(--green);
   position: absolute;
   top: 2rem;
-right: 2rem;
+  right: 2rem;
 }
-.circle{
+.circle {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
@@ -101,7 +96,7 @@ right: 2rem;
   position: absolute;
   bottom: 1rem;
 }
-.sqaure{
+.sqaure {
   width: 7rem;
   height: 7rem;
   background: var(--red);
@@ -110,17 +105,37 @@ right: 2rem;
   position: absolute;
 }
 .app-description {
-margin: 1rem;
+  margin: 1rem;
 }
 
-p{
-letter-spacing: .1rem;
-font-size: 1.2rem;
-font-weight: 300;
-line-height: 2.2rem;
+.first-view {
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 2.2rem;
+}
+.border {
+  margin: 0.8rem;
+  height: 0.7rem;
+  width: 7rem;
 }
 .second-view {
   width: 100%;
-   height: 100%;
-padding-top: 5rem;
+  height: 100%;
+  padding-top: 5rem;
+}
+
+h2 {
+  margin-left: 0.8rem;
+  font-size: 1.4rem;
+}
+.second-view p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 300;
+  white-space: pre-line;
+  margin-left: 0.8rem;
+}
+h3 {
+  font-size: 1.2rem;
 }
