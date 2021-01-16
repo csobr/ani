@@ -2,12 +2,13 @@ import React from 'react';
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second';
 import fetchFromCMS from 'lib/service';
-import { GetStaticProps, GetStaticPropsContext } from 'next'
+import { GetStaticProps } from 'next'
 
 type Props = {
   content: any
 }
 const Home = ({ content }: Props) => {
+
   return (
     <main className="main">
       <nav>
@@ -15,7 +16,7 @@ const Home = ({ content }: Props) => {
         <a>Om</a>
       </nav>
       <FirstItem content={content} />
-      <SecondItem />
+      <SecondItem content={content} />
     </main>
   );
 };
