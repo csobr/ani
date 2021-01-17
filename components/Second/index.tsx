@@ -24,18 +24,74 @@ const SecondItem = ({content}: Props) => {
       <h3>När försökte du sist imponera på för dina kompisar?</h3>
       <br />
       <form>
-        <div>
+        <label className="checkbox" htmlFor="idag">
           <input type="checkbox" name="Idag" />
-          <label htmlFor="idag">Idag</label>
-        </div>
-        <div>
+          <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+            <rect
+              className="cb-bg"
+              width="35"
+              height="35"
+              x="-2"
+              y="-2"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="5"></rect>
+
+            <polyline
+              className="cb-cm"
+              points="4,14 12,23 28,5"
+              stroke="transparent"
+              stroke-width="4"
+              fill="none"></polyline>
+          </svg>
+          <span>Idag</span>
+        </label>
+
+        <label className="checkbox" htmlFor="igår">
           <input type="checkbox" name="Igår" />
-          <label htmlFor="igår">Igår</label>
-        </div>
-        <div>
+          <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+            <rect
+              className="cb-bg"
+              width="35"
+              height="35"
+              x="-2"
+              y="-2"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="5"></rect>
+
+            <polyline
+              className="cb-cm"
+              points="4,14 12,23 28,5"
+              stroke="transparent"
+              stroke-width="4"
+              fill="none"></polyline>
+          </svg>
+          <span>Igår</span>
+        </label>
+
+        <label className="checkbox" htmlFor="igår">
           <input type="checkbox" name="Minns inte" />
-          <label htmlFor="igår">Minns inte</label>
-        </div>
+          <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+            <rect
+              className="cb-bg"
+              width="35"
+              height="35"
+              x="-2"
+              y="-2"
+              stroke="currentColor"
+              fill="none"
+              stroke-width="5"></rect>
+
+            <polyline
+              className="cb-cm"
+              points="4,14 12,23 28,5"
+              stroke="transparent"
+              stroke-width="4"
+              fill="none"></polyline>
+          </svg>
+          <span>Minns inte</span>
+        </label>
       </form>
       <br />
       <br />

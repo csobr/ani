@@ -122,7 +122,8 @@ h1 {
   margin: 1rem;
 }
 
-h2 {
+h2,
+h3 {
   font-size: 1.4rem;
 }
 
@@ -132,13 +133,52 @@ h2 {
   line-height: 2rem;
   white-space: break-spaces;
 }
-h3 {
+
+/* checkbox  */
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 3rem;
   font-size: 1.2rem;
+  font-weight: 700;
+}
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+}
+.checkbox svg {
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 0.5em;
+  margin-top: 0.1em;
+  transition: all 0.1s linear;
+}
+
+.checkbox input[type='checkbox']:checked + svg .cb-bg {
+  fill: #000000;
+  stroke: #000000;
+}
+.checkbox input[type='checkbox']:checked + svg .cb-cm {
+  stroke: var(--background);
+}
+.checkbox input[type='checkbox']:focus + svg {
+  outline: 0.3rem solid #000000;
+  outline-offset: 0.2rem;
+}
+.checkbox input[type='checkbox']:focus:not(:focus-visible) + svg {
+  outline: none;
 }
 .callout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 3.4rem;
-  font-size: 1.2rem;
+  font-weight: 900;
+  height: auto;
+  font-size: 1.4rem;
   margin: 0 auto;
   color: #000000;
   border: 0.3rem solid #000000;
