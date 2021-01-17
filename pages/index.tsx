@@ -2,13 +2,12 @@ import React from 'react';
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second';
 import fetchFromCMS from 'lib/service';
-import { GetStaticProps } from 'next'
+import {GetStaticProps} from 'next';
 
 type Props = {
-  content: any
-}
-const Home = ({ content }: Props) => {
-
+  content: any;
+};
+const Home = ({content}: Props) => {
   return (
     <main className="main">
       <nav>
@@ -23,13 +22,10 @@ const Home = ({ content }: Props) => {
 
 export default Home;
 
-
-
-
 export const getStaticProps: GetStaticProps = async () => {
   const content = await fetchFromCMS('anis');
   return {
-    props: { content },
+    props: {content},
     revalidate: 1,
   };
-}
+};
