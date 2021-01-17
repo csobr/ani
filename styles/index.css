@@ -171,6 +171,7 @@ h3 {
 .checkbox input[type='checkbox']:focus:not(:focus-visible) + svg {
   outline: none;
 }
+
 .callout {
   display: flex;
   justify-content: center;

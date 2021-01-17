@@ -35,13 +35,13 @@ const SecondItem = ({content}: Props) => {
               y="-2"
               stroke="currentColor"
               fill="none"
-              stroke-width="5"></rect>
+              strokeWidth="5"></rect>
 
             <polyline
               className="cb-cm"
               points="4,14 12,23 28,5"
               stroke="transparent"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"></polyline>
           </svg>
           <span>Idag</span>
@@ -58,13 +58,13 @@ const SecondItem = ({content}: Props) => {
               y="-2"
               stroke="currentColor"
               fill="none"
-              stroke-width="5"></rect>
+              strokeWidth="5"></rect>
 
             <polyline
               className="cb-cm"
               points="4,14 12,23 28,5"
               stroke="transparent"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"></polyline>
           </svg>
           <span>Igår</span>
@@ -81,13 +81,13 @@ const SecondItem = ({content}: Props) => {
               y="-2"
               stroke="currentColor"
               fill="none"
-              stroke-width="5"></rect>
+              strokeWidth="5"></rect>
 
             <polyline
               className="cb-cm"
               points="4,14 12,23 28,5"
               stroke="transparent"
-              stroke-width="4"
+              strokeWidth="4"
               fill="none"></polyline>
           </svg>
           <span>Minns inte</span>
