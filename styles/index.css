@@ -184,4 +184,5 @@ h3 {
   color: #000000;
   border: 0.3rem solid #000000;
   background-color: var(--yellow);
+  margin-bottom: 5rem;
 }

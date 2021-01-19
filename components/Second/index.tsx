@@ -1,6 +1,7 @@
 import Callout from '@components/callout';
 import React from 'react';
 import Border from '../../constants/border';
+import Image from '../image';
 
 type Props = {
   content: any;
@@ -19,7 +20,6 @@ const SecondItem = ({content}: Props) => {
           </div>
         </div>
       ))}
-
       <br />
       <br />
       <h3>När försökte du sist imponera på för dina kompisar?</h3>
@@ -97,6 +97,8 @@ const SecondItem = ({content}: Props) => {
       <br />
       <br />
       <Callout text="Hjärnan förändras beroende på vad du tränar på." />
+      <br />
+      <Image image={'/dopamin.webp'} alt={'dopamin'} size={340} />
     </div>
   );
 };
