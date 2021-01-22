@@ -4582,11 +4582,6 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-n@^6.5.1:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/n/-/n-6.8.0.tgz#2f619c09e2a12b16ecf96e17e89018273461ad69"
-  integrity sha512-SN8IwJfsJOx1FADDLcVH6hvXVSeQkha4gKgJQ7oDyMM0h2sYxBKvLNcNU5VnprKSqW8jL7pdvjMNIS4miQJSIA==
-
 nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"

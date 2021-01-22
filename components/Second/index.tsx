@@ -11,15 +11,13 @@ const SecondItem = ({content}: Props) => {
     <div className="second-view">
       <Border color={'#eb483d'} />
       <br />
-      {content.map((item) => (
-        <div key={item.id}>
-          <h2>{item.headline}</h2>
-          <br></br>
-          <div className="description">
-            <p>{item.content}</p>
-          </div>
+      <div>
+        <h2></h2>
+        <br></br>
+        <div className="description">
+          <p></p>
         </div>
-      ))}
+      </div>
       <br />
       <br />
       <h3>När försökte du sist imponera på för dina kompisar?</h3>
