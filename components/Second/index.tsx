@@ -1,6 +1,7 @@
-import Callout from '@components/callout';
 import React from 'react';
+
 import Border from '../../constants/border';
+import Callout from '@components/callout';
 import Image from '../image';
 
 type Props = {

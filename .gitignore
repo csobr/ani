@@ -1,4 +1,4 @@
 ## Dependencies
 node_modules
 .next
-pages/api/.env
+prismic-configuration.ts
