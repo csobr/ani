@@ -1,12 +1,15 @@
 import React from 'react';
 
-type Text = {
+type Props = {
   text: string;
+  borderColor: string;
+  backgroundColor: string;
+  textColor: string;
 };
-const Callout = ({text}: Text) => {
+const Callout = ({text, backgroundColor, borderColor, textColor}: Props) => {
   return (
-    <div className="callout">
-      <p>{text}</p>
+    <div className="callout" style={{backgroundColor: backgroundColor, borderColor: borderColor}}>
+      <p style={{color: textColor}}>{text}</p>
     </div>
   );
 };

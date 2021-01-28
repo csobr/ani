@@ -181,8 +181,7 @@ h3 {
   height: auto;
   font-size: 1.4rem;
   margin: 0 auto;
-  color: #000000;
-  border: 0.3rem solid #000000;
-  background-color: var(--yellow);
+  border: 0.3rem solid;
   margin-bottom: 5rem;
+  padding: 0.5rem;
 }

@@ -4,6 +4,7 @@ import SecondItem from '@components/Second';
 
 import {Client} from '../prismic-configuration';
 import {GetServerSideProps} from 'next';
+import ThridView from '@components/Third';
 
 type Props = {
   content: any;
@@ -17,6 +18,7 @@ const Home = ({content}: Props) => {
       </nav>
       <FirstItem content={content} />
       <SecondItem content={content} />
+      <ThridView content={content} />
     </main>
   );
 };

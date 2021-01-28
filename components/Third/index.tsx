@@ -1,16 +1,16 @@
 import React from 'react';
-import {RichText} from 'prismic-reactjs';
-import Border from '../../constants/border';
 import Callout from '@components/callout';
 import Image from '../image';
+import Border from 'constants/border';
+import {RichText} from 'prismic-reactjs';
 
 type Props = {
   content: any;
 };
-const SecondItem = ({content}: Props) => {
+const ThridView = ({content}: Props) => {
   return (
     <div className="second-view">
-      <Border color={'#eb483d'} />
+      <Border color={'#f1d02c'} />
       <br />
       <div>
         <h2>{RichText.asText(content.data.h2)}</h2>
@@ -97,14 +97,14 @@ const SecondItem = ({content}: Props) => {
       <br />
       <Callout
         text="Hjärnan förändras beroende på vad du tränar på."
-        backgroundColor={'#f1d02c'}
-        borderColor={'#000000'}
-        textColor={'#000000'}
+        backgroundColor={'#000000'}
+        borderColor={'#f1d02c'}
+        textColor={'#f1d02c'}
       />
       <br />
-      <Image image={'/dopamin.webp'} alt={'dopamin'} size={340} />
+      <Image image={'/brain.webp'} alt={'dopamin'} size={340} />
     </div>
   );
 };
 
-export default SecondItem;
+export default ThridView;
