@@ -51,7 +51,6 @@ nav img {
 /* First View */
 .first-view {
   display: grid;
-  width: 100%;
   margin: 1rem;
 }
 .header {
@@ -117,7 +116,6 @@ h1 {
 /* second view */
 
 .second-view {
-  height: 100%;
   padding-top: 5rem;
   margin: 1rem;
 }
@@ -184,4 +182,13 @@ h3 {
   border: 0.3rem solid;
   margin-bottom: 5rem;
   padding: 0.5rem;
+}
+
+.highlight {
+  background-color: #000320;
+  height: auto;
+  padding: 1rem;
+  color: #f0eee8;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
 }

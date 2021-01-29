@@ -5,11 +5,13 @@ import SecondItem from '@components/Second';
 import {Client} from '../prismic-configuration';
 import {GetServerSideProps} from 'next';
 import ThridView from '@components/Third';
+import Highlight from '@components/highlight';
 
 type Props = {
   content: any;
 };
 const Home = ({content}: Props) => {
+  const header = 'Sömn';
   return (
     <main className="main">
       <nav>
@@ -19,6 +21,7 @@ const Home = ({content}: Props) => {
       <FirstItem content={content} />
       <SecondItem content={content} />
       <ThridView content={content} />
+      <Highlight header={header} content={content} />
     </main>
   );
 };
