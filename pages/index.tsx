@@ -6,6 +6,7 @@ import {Client} from '../prismic-configuration';
 import {GetServerSideProps} from 'next';
 import ThridView from '@components/Third';
 import Highlight from '@components/highlight';
+import FourthView from '@components/Fourth';
 
 type Props = {
   content: any;
@@ -22,6 +23,7 @@ const Home = ({content}: Props) => {
       <SecondItem content={content} />
       <ThridView content={content} />
       <Highlight header={header} content={content} />
+      <FourthView content={content} />
     </main>
   );
 };

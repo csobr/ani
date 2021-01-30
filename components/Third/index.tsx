@@ -102,7 +102,6 @@ const ThridView = ({content}: Props) => {
         textColor={'#f1d02c'}
       />
       <br />
-      <Image image={'/brain.webp'} alt={'dopamin'} size={340} />
     </div>
   );
 };

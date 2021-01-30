@@ -116,7 +116,8 @@ h1 {
 /* second view */
 
 .second-view,
-.third-view {
+.third-view,
+.fourth-view {
   padding-top: 5rem;
   margin: 1rem;
 }
