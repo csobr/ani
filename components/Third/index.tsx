@@ -9,7 +9,7 @@ type Props = {
 };
 const ThridView = ({content}: Props) => {
   return (
-    <div className="second-view">
+    <div className="third-view">
       <Border color={'#f1d02c'} />
       <br />
       <div>

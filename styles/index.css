@@ -115,7 +115,8 @@ h1 {
 }
 /* second view */
 
-.second-view {
+.second-view,
+.third-view {
   padding-top: 5rem;
   margin: 1rem;
 }
@@ -180,7 +181,7 @@ h3 {
   font-size: 1.4rem;
   margin: 0 auto;
   border: 0.3rem solid;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   padding: 0.5rem;
 }
 
