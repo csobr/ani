@@ -7,6 +7,7 @@ import {GetServerSideProps} from 'next';
 import ThridView from '@components/Third';
 import Highlight from '@components/highlight';
 import FourthView from '@components/Fourth';
+import Footer from '@components/footer';
 
 type Props = {
   content: any;
@@ -24,6 +25,7 @@ const Home = ({content}: Props) => {
       <ThridView content={content} />
       <Highlight header={header} content={content} />
       <FourthView content={content} />
+      <Footer />
     </main>
   );
 };
