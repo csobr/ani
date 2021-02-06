@@ -1,82 +1,61 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-type PollOptions = {
-  a: string;
-  b: string;
-  c: string;
+const Poll = () => {
+  const [voteData, setVoteData] = useState(null);
+  const [totalVotes, setTotalVotes] = useState(0);
+  const [voted, setVoted] = useState(false);
+  const url = 'http:///localhost:3000/api/pollApi';
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setVoteData(data);
+        let sum = 0;
+        data.forEach((obj) => {
+          sum += obj.votes;
+        });
+        setTotalVotes(sum);
+      });
+  }, []);
+
+  const submitVote = (e) => {
+    if (voted === false) {
+      const voteSelected = e.target.dataset.id;
+      const voteCurrent = voteData[voteSelected].votes;
+      voteData[voteSelected].votes = voteCurrent + 1;
+      setTotalVotes(totalVotes + 1);
+      setVoted(!voted);
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(voteData),
+        headers: {'Content-Type': 'application/json'},
+      };
+
+      fetch(url)
+        .then((res) => res.json())
+        .then((res) => console.log(res));
+    }
+  };
+
+  let pollOptions;
+  if (voteData) {
+    pollOptions = voteData.map((item) => {
+      return (
+        <li key={item.id}>
+          <button onClick={submitVote} data-id={item.id}>
+            {item.option}
+            <span>-{item.votes}</span>
+          </button>
+        </li>
+      );
+    });
+  }
+  return (
+    <div className="poll">
+      <ul className={voted ? 'results' : 'options'}>{pollOptions}</ul>
+      <p>Total Votes: {totalVotes}</p>
+    </div>
+  );
 };
-
-const Poll = ({a, b, c}: PollOptions) => (
-  <form>
-    <label className="checkbox" htmlFor={a}>
-      <input type="checkbox" name={a} />
-      <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
-        <rect
-          className="cb-bg"
-          width="35"
-          height="35"
-          x="-2"
-          y="-2"
-          stroke="currentColor"
-          fill="none"
-          strokeWidth="5"></rect>
-
-        <polyline
-          className="cb-cm"
-          points="4,14 12,23 28,5"
-          stroke="transparent"
-          strokeWidth="4"
-          fill="none"></polyline>
-      </svg>
-      <span>{a}</span>
-    </label>
-
-    <label className="checkbox" htmlFor={a}>
-      <input type="checkbox" name={b} />
-      <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
-        <rect
-          className="cb-bg"
-          width="35"
-          height="35"
-          x="-2"
-          y="-2"
-          stroke="currentColor"
-          fill="none"
-          strokeWidth="5"></rect>
-
-        <polyline
-          className="cb-cm"
-          points="4,14 12,23 28,5"
-          stroke="transparent"
-          strokeWidth="4"
-          fill="none"></polyline>
-      </svg>
-      <span>{b}</span>
-    </label>
-
-    <label className="checkbox" htmlFor={c}>
-      <input type="checkbox" name={c} />
-      <svg width="35" height="35" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
-        <rect
-          className="cb-bg"
-          width="35"
-          height="35"
-          x="-2"
-          y="-2"
-          stroke="currentColor"
-          fill="none"
-          strokeWidth="5"></rect>
-
-        <polyline
-          className="cb-cm"
-          points="4,14 12,23 28,5"
-          stroke="transparent"
-          strokeWidth="4"
-          fill="none"></polyline>
-      </svg>
-      <span>{c}</span>
-    </label>
-  </form>
-);
 
 export default Poll;
