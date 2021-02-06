@@ -158,14 +158,6 @@ h3 {
   margin: 0 auto;
   font-weight: 700;
 }
-
-.poll ul li span {
-  display: none;
-}
-
-.poll ul.results li {
-  border-color: var(--green);
-}
 .callout {
   display: flex;
   justify-content: center;
@@ -187,6 +179,25 @@ h3 {
   color: #f0eee8;
   font-size: 1.2rem;
   line-height: 1.5rem;
+}
+.progress-bar {
+  font-size: 1rem;
+}
+progress {
+  display: flex;
+  justify-content: space-around;
+  height: 1.8rem;
+  width: 15rem;
+  border-radius: 1rem;
+  border: 1px solid var(--primary);
+}
+progress::-webkit-progress-bar {
+  background-color: var(--background);
+  border-radius: 1rem;
+}
+progress::-webkit-progress-value {
+  background-color: var(--green);
+  border-radius: 1rem;
 }
 footer {
   display: flex;

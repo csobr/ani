@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import ProgressBar from './progressBar';
 
 const Poll = () => {
   const [voteData, setVoteData] = useState(null);
@@ -14,6 +15,7 @@ const Poll = () => {
         data.forEach((obj) => {
           sum += obj.votes;
         });
+
         setTotalVotes(sum);
       });
   }, []);
@@ -44,15 +46,22 @@ const Poll = () => {
         <li key={item.id}>
           <button onClick={submitVote} data-id={item.id}>
             {item.option}
-            <span>-{item.votes}</span>
           </button>
         </li>
       );
     });
   }
+
+  let results;
+  if (voteData) {
+    results = voteData.map((item) => {
+      return <ProgressBar key={item.id} value={item.votes} />;
+    });
+  }
+
   return (
     <div className="poll">
-      <ul className={voted ? 'results' : 'options'}>{pollOptions}</ul>
+      <ul className={voted ? 'results' : 'options'}>{voted ? results : pollOptions}</ul>
       <p>Total Votes: {totalVotes}</p>
     </div>
   );
