@@ -177,7 +177,7 @@ h3 {
   line-height: 1rem;
 }
 .poll li button {
-  padding: 0.5rem;
+  padding: 0.3rem;
   width: 100%;
   border: none;
   background-color: transparent;
@@ -208,10 +208,10 @@ progress::-webkit-progress-value {
   border-radius: 3rem;
 }
 footer {
+  font-family: 'Futura';
   display: flex;
   flex-direction: 'row';
   height: 3rem;
-  border: 0.5rem solid var(--primary);
   align-items: center;
   justify-content: center;
   font-size: 1rem;
