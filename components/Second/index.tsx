@@ -33,7 +33,6 @@ const SecondItem = ({content}: Props) => {
         borderColor={'#000000'}
         textColor={'#000000'}
       />
-      <br />
       <Image image={'/dopamin.webp'} alt={'dopamin'} size={340} />
     </div>
   );
