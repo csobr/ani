@@ -3,13 +3,20 @@ import React from 'react';
 type Props = {
   value: number;
   max: number;
+  question: string;
 };
-const ProgressBar = ({value, max}: Props) => {
+
+const ProgressBar = ({value, max, question}: Props) => {
   max = 100;
+
   return (
     <div className="progress-bar">
-      <progress value={(value * 100) / value} max={max} />
-      <span>{value * max}%</span>
+      <progress value={value} max={max} />
+      <span>
+        {question}
+        {'\n'}
+        {value}%
+      </span>
     </div>
   );
 };

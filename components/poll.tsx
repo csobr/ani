@@ -17,6 +17,14 @@ const Poll = () => {
         });
 
         setTotalVotes(sum);
+        const getTotalVotes = localStorage.getItem('totalVotes');
+        if (getTotalVotes != '0') {
+          setTotalVotes(JSON.parse(getTotalVotes));
+        }
+        let getVoteData = localStorage.getItem('voteData');
+        if (getVoteData != null) {
+          setVoteData(JSON.parse(getVoteData));
+        }
       });
   }, []);
 
@@ -26,6 +34,9 @@ const Poll = () => {
       const voteCurrent = voteData[voteSelected].votes;
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
+
+      localStorage.setItem('totalVotes', JSON.stringify(totalVotes + 1));
+      localStorage.setItem('voteData', JSON.stringify(voteData));
       setVoted(!voted);
       const options = {
         method: 'POST',
@@ -55,14 +66,22 @@ const Poll = () => {
   let results;
   if (voteData) {
     results = voteData.map((item) => {
-      return <ProgressBar key={item.id} value={item.votes} />;
+      return (
+        <ProgressBar
+          key={item.id}
+          value={Math.round(100 / totalVotes) * item.votes}
+          data-id={item.id}
+          question={item.option}
+        />
+      );
     });
   }
 
   return (
     <div className="poll">
-      <ul className={voted ? 'results' : 'options'}>{voted ? results : pollOptions}</ul>
-      <p>Total Votes: {totalVotes}</p>
+      <div className="poll-container">{voted ? results : pollOptions}</div>
+      <br />
+      <p>Total Röster: {totalVotes}</p>
     </div>
   );
 };

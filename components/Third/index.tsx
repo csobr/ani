@@ -2,7 +2,6 @@ import React from 'react';
 import Callout from '@components/callout';
 import Border from 'constants/border';
 import {RichText} from 'prismic-reactjs';
-import Poll from '@components/poll';
 
 type Props = {
   content: any;
@@ -23,7 +22,6 @@ const ThridView = ({content}: Props) => {
       <br />
       <h3>När försökte du sist imponera på för dina kompisar?</h3>
       <br />
-      <Poll a={'idag'} b={'igår'} c={'minns inte'} />
       <br />
       <br />
       <Callout
