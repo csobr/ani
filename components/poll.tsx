@@ -17,27 +17,33 @@ const Poll = () => {
         });
 
         setTotalVotes(sum);
-        const getTotalVotes = localStorage.getItem('totalVotes');
+        // testing
+        const getTotalVotes = sessionStorage.getItem('totalVotes');
         if (getTotalVotes != '0') {
           setTotalVotes(JSON.parse(getTotalVotes));
         }
-        let getVoteData = localStorage.getItem('voteData');
-        if (getVoteData != null) {
+        let getVoteData = sessionStorage.getItem('voteData');
+        if (getVoteData) {
           setVoteData(JSON.parse(getVoteData));
+        }
+        let didVote = sessionStorage.getItem('voted');
+        if (didVote) {
+          setVoted(JSON.parse(didVote));
         }
       });
   }, []);
 
   const submitVote = (e) => {
-    if (voted === false) {
+    if (!voted) {
       const voteSelected = e.target.dataset.id;
       const voteCurrent = voteData[voteSelected].votes;
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
-
-      localStorage.setItem('totalVotes', JSON.stringify(totalVotes + 1));
-      localStorage.setItem('voteData', JSON.stringify(voteData));
       setVoted(!voted);
+      sessionStorage.setItem('totalVotes', JSON.stringify(totalVotes + 1));
+      sessionStorage.setItem('voteData', JSON.stringify(voteData));
+      sessionStorage.setItem('voted', JSON.stringify(!voted));
+
       const options = {
         method: 'POST',
         body: JSON.stringify(voteData),
