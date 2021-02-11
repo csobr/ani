@@ -19,7 +19,7 @@ const Poll = () => {
         setTotalVotes(sum);
         // testing
         const getTotalVotes = sessionStorage.getItem('totalVotes');
-        if (getTotalVotes != '0') {
+        if (getTotalVotes) {
           setTotalVotes(JSON.parse(getTotalVotes));
         }
         let getVoteData = sessionStorage.getItem('voteData');
