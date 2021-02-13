@@ -85,7 +85,7 @@ const Poll = () => {
     <div className="poll">
       <div className="poll-container">{voted ? results : pollOptions}</div>
       <br />
-      <p>Total Röster: {totalVotes}</p>
+      <p>Antal röster: {totalVotes}</p>
     </div>
   );
 };

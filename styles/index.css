@@ -20,7 +20,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 62.5%;
 }
 body {
   font-family: 'Helvetica', sans-serif;
@@ -28,6 +28,8 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 main {
@@ -46,76 +48,81 @@ nav {
   align-items: center;
 }
 nav a {
-  font-size: 1.4rem;
   color: #000000;
   text-decoration: none;
 }
 nav img {
-  height: 2rem;
+  height: 4.5rem;
 }
 /* First View */
 .first-view {
-  display: grid;
   margin: 1rem;
+  height: 60%;
 }
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-}
-h1 {
-  font-size: 4.8rem;
-  text-transform: uppercase;
-  white-space: pre-wrap;
-  font-weight: 900;
+  height: 55%;
   z-index: 1;
   position: absolute;
 }
+h1 {
+  font-size: 7.8rem;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  font-weight: 900;
+}
 .shapes {
-  width: 100%;
+  display: grid;
+  grid-column: 1/4;
+  grid-row: 1;
   z-index: 0;
   position: relative;
-  height: 20rem;
+  height: 70%;
 }
 .rectangle {
+  grid-column: 1/4;
+  grid-row: 1;
   margin-left: 1rem;
-  width: 8rem;
-  height: 4rem;
+  width: 10rem;
+  height: 6rem;
   background: var(--yellow);
-  top: 0;
 }
 .triangel {
+  grid-column: 2/4;
+  grid-row: 1/2;
   width: 0;
   height: 0;
-  border-left: 4.5rem solid transparent;
-  border-right: 4.5rem solid transparent;
-  border-bottom: 7.5rem solid var(--green);
+  border-left: 7rem solid transparent;
+  border-right: 7rem solid transparent;
+  border-bottom: 12rem solid var(--green);
   position: absolute;
-  top: 2rem;
-  right: 2rem;
 }
 .circle {
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   background: var(--pink);
-  position: absolute;
   bottom: 1rem;
+  grid-row: 4/4;
 }
 .sqaure {
-  width: 7rem;
-  height: 7rem;
+  width: 10rem;
+  height: 10rem;
   background: var(--red);
-  right: 1rem;
-  bottom: 1rem;
-  position: absolute;
+  grid-row: 4/4;
+  grid-column: 4/4;
 }
 .app-description p {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 2.2rem;
 }
 .border {
-  height: 0.7rem;
-  width: 7rem;
+  height: 1rem;
+  width: 8rem;
   margin-bottom: 1rem;
 }
 /* second view */
@@ -127,13 +134,7 @@ h1 {
   margin: 1rem;
 }
 
-h2,
-h3 {
-  font-size: 1.5rem;
-}
-
 .description p {
-  font-size: 1.2rem;
   font-weight: 300;
   line-height: 2rem;
   white-space: break-spaces;
@@ -145,7 +146,6 @@ h3 {
   width: 100%;
   font-weight: 900;
   height: auto;
-  font-size: 1.4rem;
   margin: 0 auto;
   border: 0.3rem solid;
   margin-bottom: 3rem;
@@ -157,13 +157,11 @@ h3 {
   height: auto;
   padding: 1rem;
   color: #f0eee8;
-  font-size: 1.2rem;
   line-height: 1.5rem;
 }
 /* poll */
 .poll {
   width: 100%;
-  font-size: 1.2rem;
 }
 .poll p {
   font-weight: 700;
@@ -183,7 +181,7 @@ h3 {
   background-color: transparent;
   margin: 0 auto;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 .progress-bar {
   display: flex;
@@ -235,4 +233,66 @@ footer p {
   padding-right: 0.2rem;
   font-weight: 700;
   font-size: 1.5rem;
+}
+
+/* Desktop styles */
+
+@media screen and (min-width: 24rem) {
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .first-view {
+    width: 90%;
+    display: grid;
+    margin: 0 auto;
+    padding-top: 4rem;
+    height: 90%;
+  }
+
+  .header {
+    width: 50rem;
+    position: relative;
+  }
+  h1 {
+    font-size: 12rem;
+  }
+  .app-description p {
+    line-height: 3.2rem;
+  }
+  .shapes {
+    display: grid;
+    grid-column: 4/4;
+    height: 55rem;
+    width: 60rem;
+  }
+  .rectangle {
+    grid-column: 1/4;
+    grid-row: 1;
+    height: 15rem;
+    width: 30rem;
+  }
+  .triangel {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    border-left: 15rem solid transparent;
+    border-right: 15rem solid transparent;
+    border-bottom: 28rem solid var(--green);
+  }
+  .circle {
+    width: 26rem;
+    height: 26rem;
+    position: relative;
+    grid-row: 4/4;
+  }
+  .sqaure {
+    width: 23rem;
+    height: 23rem;
+    grid-row: 4/4;
+  }
+
+  .poll,
+  .callout {
+    width: 60%;
+  }
 }
