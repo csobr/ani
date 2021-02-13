@@ -50,9 +50,7 @@ const Poll = () => {
         headers: {'Content-Type': 'application/json'},
       };
 
-      fetch(url)
-        .then((res) => res.json())
-        .then((res) => console.log(res));
+      fetch(url).then((res) => res.json());
     }
   };
 

@@ -198,15 +198,30 @@ progress {
   width: 100%;
   border-radius: 3rem;
   border: 1px solid var(--primary);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
 }
 progress::-webkit-progress-bar {
+  background-color: var(--background);
+  border-radius: 3rem;
+}
+progress::-moz-progress-bar {
   background-color: var(--background);
   border-radius: 3rem;
 }
 progress::-webkit-progress-value {
   background-color: var(--green);
   border-radius: 3rem;
+  -webkit-transition: all 0.5;
+  transition: all 0.5;
 }
+progress::-moz-progress-bar {
+  background-color: var(--green) !important;
+  border-radius: 3rem;
+}
+
 footer {
   font-family: 'Futura';
   display: flex;
