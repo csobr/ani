@@ -14,7 +14,7 @@ const SecondItem = ({content}: Props) => {
       <Border color={'#eb483d'} />
       <br />
       <div>
-        <h2>{RichText.asText(content.data.h2)}</h2>
+        <h2>{RichText.asText(content.data.title)}</h2>
         <br></br>
         <div className="description">
           <p>{RichText.asText(content.data.content)}</p>

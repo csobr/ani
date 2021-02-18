@@ -23,7 +23,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Helvetica-neue', sans-serif;
   background-color: var(--background);
   height: 100%;
   width: 100%;
@@ -136,7 +136,7 @@ h1 {
 
 .description p {
   font-weight: 300;
-  line-height: 2rem;
+  line-height: 3rem;
   white-space: break-spaces;
 }
 .callout {

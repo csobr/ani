@@ -19,7 +19,7 @@ const FourthView = ({content}) => (
     <br />
 
     <>
-      <h2>{RichText.asText(content.data.h2)}</h2>
+      <h2>{RichText.asText(content.data.title)}</h2>
       <br />
       <div className="description">
         <p>{RichText.asText(content.data.content)}</p>
