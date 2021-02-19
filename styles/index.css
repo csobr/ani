@@ -23,7 +23,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Helvetica-neue', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   background-color: var(--background);
   height: 100%;
   width: 100%;
@@ -156,8 +156,37 @@ h1 {
   background-color: #000320;
   height: auto;
   padding: 1rem;
-  color: #f0eee8;
+  color: #fff;
   line-height: 1.5rem;
+  font-weight: 300;
+}
+.star-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.star {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  margin: 0 1rem 2rem 1.5rem;
+}
+
+.star:before,
+.star:after {
+  content: '';
+  position: absolute;
+  background-color: var(--yellow);
+  display: block;
+  left: 0;
+  width: 141.4213%;
+  top: 0;
+  bottom: 0;
+  border-radius: 5%;
+  transform: rotate(66.66deg) skewX(45deg);
+}
+.star:after {
+  transform: rotate(156.66deg) skew(45deg);
 }
 /* poll */
 .poll {
@@ -192,7 +221,7 @@ h1 {
   padding: 0.4rem 0.4rem;
 }
 progress {
-  height: 2.5rem;
+  height: 3.5rem;
   width: 100%;
   border-radius: 3rem;
   border: 1px solid var(--primary);
@@ -237,7 +266,7 @@ footer p {
 
 /* Desktop styles */
 
-@media screen and (min-width: 24rem) {
+@media screen and (min-width: 34rem) {
   main {
     width: 90%;
     margin: 0 auto;
@@ -290,9 +319,41 @@ footer p {
     height: 23rem;
     grid-row: 4/4;
   }
-
-  .poll,
+  .description {
+    display: grid;
+  }
+  .description p {
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+  .description img {
+    grid-column: 2/2;
+    grid-row: 1;
+  }
+  h3 {
+    text-align: center;
+  }
+  .poll {
+    width: 35rem;
+    margin: 0 auto;
+  }
   .callout {
-    width: 60%;
+    padding: 1rem;
+    width: 50%;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  .highlight {
+    width: 80%;
+    height: auto;
+    padding: 4rem;
+    margin: 0 auto;
+  }
+
+  .highlight p {
+    width: 100%;
+    line-height: 2.8rem;
   }
 }

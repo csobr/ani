@@ -18,6 +18,7 @@ const SecondItem = ({content}: Props) => {
         <br></br>
         <div className="description">
           <p>{RichText.asText(content.data.content)}</p>
+          <Image image={content.data.image.url} alt={content.data.image.alt} size={340} />
         </div>
       </div>
       <br />
@@ -33,7 +34,6 @@ const SecondItem = ({content}: Props) => {
         borderColor={'#000000'}
         textColor={'#000000'}
       />
-      <Image image={'/dopamin.webp'} alt={'dopamin'} size={340} />
     </div>
   );
 };
