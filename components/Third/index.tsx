@@ -1,5 +1,4 @@
 import React from 'react';
-import Callout from '@components/callout';
 import Border from 'constants/border';
 import {RichText} from 'prismic-reactjs';
 
@@ -21,12 +20,6 @@ const ThridView = ({content}: Props) => {
       </div>
       <br />
       <br />
-      <Callout
-        text="Hjärnan förändras beroende på vad du tränar på."
-        backgroundColor={'#000000'}
-        borderColor={'#f1d02c'}
-        textColor={'#f1d02c'}
-      />
       <br />
     </div>
   );

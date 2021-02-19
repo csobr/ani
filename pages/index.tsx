@@ -17,7 +17,7 @@ const Home = ({content}: Props) => {
   return (
     <main className="main">
       <nav>
-        <img src="logo.png" alt="logo"></img>
+        <p className="logo">ani</p>
         <a>Om</a>
       </nav>
       <FirstItem content={content} />

@@ -48,11 +48,15 @@ nav {
   align-items: center;
 }
 nav a {
+  font-size: 2rem;
   color: #000000;
   text-decoration: none;
 }
-nav img {
-  height: 4.5rem;
+nav p {
+  font-family: 'futura';
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 5rem;
 }
 /* First View */
 .first-view {
@@ -146,7 +150,6 @@ h1 {
   width: 100%;
   font-weight: 900;
   height: auto;
-  margin: 0 auto;
   border: 0.3rem solid;
   margin-bottom: 3rem;
   padding: 0.5rem;
@@ -306,7 +309,7 @@ footer p {
     grid-row: 1/2;
     border-left: 15rem solid transparent;
     border-right: 15rem solid transparent;
-    border-bottom: 28rem solid var(--green);
+    border-bottom: 23rem solid var(--green);
   }
   .circle {
     width: 26rem;
@@ -346,7 +349,7 @@ footer p {
     font-size: 2rem;
   }
   .highlight {
-    width: 80%;
+    width: 100%;
     height: auto;
     padding: 4rem;
     margin: 0 auto;
