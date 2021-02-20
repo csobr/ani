@@ -17,9 +17,9 @@ const SecondItem = ({content}: Props) => {
         <h2>{RichText.asText(content.data.title)}</h2>
         <br></br>
         <div className="description">
-          <p>{RichText.asText(content.data.content)}</p>
+          <p>{RichText.asText(content.data.content)}</p>{' '}
           <Image image={content.data.image.url} alt={content.data.image.alt} size={340} />
-        </div>
+        </div>{' '}
       </div>
       <br />
       <br />

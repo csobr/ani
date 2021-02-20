@@ -60,14 +60,16 @@ nav p {
 }
 /* First View */
 .first-view {
-  margin: 1rem;
-  height: 60%;
+  width: 90%;
+  height: 70%;
+  margin: 0 auto;
+  padding-top: 4rem;
 }
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   height: 55%;
   z-index: 1;
   position: absolute;
@@ -80,8 +82,7 @@ h1 {
 }
 .shapes {
   display: grid;
-  grid-column: 1/4;
-  grid-row: 1;
+  grid-column: 4/4;
   z-index: 0;
   position: relative;
   height: 70%;
@@ -275,14 +276,16 @@ footer p {
     margin: 0 auto;
   }
   .first-view {
-    width: 90%;
     display: grid;
-    margin: 0 auto;
+    grid-auto-columns: min-content;
+    gap: 1rem;
     padding-top: 4rem;
     height: 90%;
+    width: 90%;
+    margin: 0 auto;
   }
-
   .header {
+    grid-column: 1/2;
     width: 50rem;
     position: relative;
   }
@@ -294,7 +297,7 @@ footer p {
   }
   .shapes {
     display: grid;
-    grid-column: 4/4;
+    grid-column: 2/2;
     height: 55rem;
     width: 60rem;
   }
@@ -325,14 +328,13 @@ footer p {
   .description {
     display: grid;
   }
+
   .description p {
-    display: flex;
+    width: 100%;
     grid-column: 1/2;
-    grid-row: 1;
   }
-  .description img {
+  .image {
     grid-column: 2/2;
-    grid-row: 1;
   }
   h3 {
     text-align: center;
@@ -358,5 +360,11 @@ footer p {
   .highlight p {
     width: 100%;
     line-height: 2.8rem;
+  }
+}
+@media screen and (max-width: 70rem) {
+  .description p,
+  .image {
+    grid-column: 1;
   }
 }
