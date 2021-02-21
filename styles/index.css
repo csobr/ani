@@ -350,7 +350,11 @@ footer p {
     line-height: 2.8rem;
   }
 }
-@media screen and (max-width: 100rem) {
+@media screen and (max-width: 1024px) {
+  .first-view {
+    height: 60vh;
+  }
+
   .description p,
   .image {
     grid-column: 1;
