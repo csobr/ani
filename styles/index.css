@@ -61,7 +61,7 @@ nav p {
 /* First View */
 .first-view {
   width: 90%;
-  height: 70%;
+  height: 70vh;
   margin: 0 auto;
   padding-top: 4rem;
 }
@@ -82,28 +82,24 @@ h1 {
 }
 .shapes {
   display: grid;
-  grid-column: 4/4;
+  grid-template-columns: repeat(2, minmax(10rem, 3fr));
   z-index: 0;
   position: relative;
-  height: 70%;
+  grid-auto-rows: 20rem;
+  grid-gap: 1rem;
 }
 .rectangle {
-  grid-column: 1/4;
-  grid-row: 1;
   margin-left: 1rem;
   width: 10rem;
   height: 6rem;
   background: var(--yellow);
 }
 .triangel {
-  grid-column: 2/4;
-  grid-row: 1/2;
   width: 0;
   height: 0;
   border-left: 7rem solid transparent;
   border-right: 7rem solid transparent;
   border-bottom: 12rem solid var(--green);
-  position: absolute;
 }
 .circle {
   width: 12rem;
@@ -111,16 +107,14 @@ h1 {
   border-radius: 50%;
   background: var(--pink);
   bottom: 1rem;
-  grid-row: 4/4;
 }
 .sqaure {
   width: 10rem;
   height: 10rem;
   background: var(--red);
-  grid-row: 4/4;
-  grid-column: 4/4;
+  justify-self: end;
 }
-.app-description p {
+.app-description {
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 2.2rem;
@@ -154,14 +148,15 @@ h1 {
   border: 0.3rem solid;
   margin-bottom: 3rem;
   padding: 0.5rem;
+  white-space: pre-wrap;
 }
 
 .highlight {
   background-color: #000320;
   height: auto;
-  padding: 1rem;
+  padding: 2.5rem;
   color: #fff;
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   font-weight: 300;
 }
 .star-container {
@@ -277,15 +272,14 @@ footer p {
   }
   .first-view {
     display: grid;
-    grid-auto-columns: min-content;
-    gap: 1rem;
     padding-top: 4rem;
-    height: 90%;
+    height: 90vh;
     width: 90%;
     margin: 0 auto;
+    overflow-x: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
   .header {
-    grid-column: 1/2;
     width: 50rem;
     position: relative;
   }
@@ -297,19 +291,15 @@ footer p {
   }
   .shapes {
     display: grid;
-    grid-column: 2/2;
+    grid-auto-rows: 25rem;
     height: 55rem;
-    width: 60rem;
+    width: 90%;
   }
   .rectangle {
-    grid-column: 1/4;
-    grid-row: 1;
     height: 15rem;
     width: 30rem;
   }
   .triangel {
-    grid-column: 2/4;
-    grid-row: 1/2;
     border-left: 15rem solid transparent;
     border-right: 15rem solid transparent;
     border-bottom: 23rem solid var(--green);
@@ -318,12 +308,10 @@ footer p {
     width: 26rem;
     height: 26rem;
     position: relative;
-    grid-row: 4/4;
   }
   .sqaure {
     width: 23rem;
     height: 23rem;
-    grid-row: 4/4;
   }
   .description {
     display: grid;
@@ -362,7 +350,7 @@ footer p {
     line-height: 2.8rem;
   }
 }
-@media screen and (max-width: 70rem) {
+@media screen and (max-width: 100rem) {
   .description p,
   .image {
     grid-column: 1;
