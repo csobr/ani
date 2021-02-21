@@ -25,7 +25,7 @@ html {
 body {
   font-family: 'Helvetica', sans-serif;
   background-color: var(--background);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow-x: hidden;
   font-size: 16px;
@@ -58,6 +58,7 @@ nav p {
   text-transform: lowercase;
   font-size: 5rem;
 }
+
 /* First View */
 .first-view {
   width: 90%;
@@ -71,8 +72,6 @@ nav p {
   justify-content: space-between;
   width: 90%;
   height: 55%;
-  z-index: 1;
-  position: absolute;
 }
 h1 {
   font-size: 7.8rem;
@@ -83,8 +82,6 @@ h1 {
 .shapes {
   display: grid;
   grid-template-columns: repeat(2, minmax(10rem, 3fr));
-  z-index: 0;
-  position: relative;
   grid-auto-rows: 20rem;
   grid-gap: 1rem;
 }
@@ -267,10 +264,35 @@ footer p {
 
 @media screen and (min-width: 34rem) {
   main {
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+  }
+
+  .side-menu {
+    display: flex;
+    background-color: var(--background);
+    height: 100vh;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 30vw;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+    overflow-x: scroll;
+  }
+  .side-menu a {
+    padding: 1rem;
+  }
+  .second-view,
+  .third-view,
+  .fourth-view,
+  .highlight {
     width: 90%;
     margin: 0 auto;
   }
   .first-view {
+    width: 90%;
     display: grid;
     padding-top: 4rem;
     height: 90vh;
@@ -281,7 +303,6 @@ footer p {
   }
   .header {
     width: 50rem;
-    position: relative;
   }
   h1 {
     font-size: 12rem;
@@ -307,7 +328,6 @@ footer p {
   .circle {
     width: 26rem;
     height: 26rem;
-    position: relative;
   }
   .sqaure {
     width: 23rem;
@@ -339,7 +359,6 @@ footer p {
     font-size: 2rem;
   }
   .highlight {
-    width: 100%;
     height: auto;
     padding: 4rem;
     margin: 0 auto;
