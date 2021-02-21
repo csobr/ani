@@ -1,12 +1,13 @@
 import React from 'react';
 
-type Props = {
+interface Props {
   open: boolean;
   closed: any;
-};
-const SideMenu = ({open, closed}: Props) => {
+  clickedOutsideRef: any;
+}
+const SideMenu = ({clickedOutsideRef, open, closed}: Props) => {
   return (
-    <div className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
+    <div ref={clickedOutsideRef} className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
       <a onClick={closed}>Close</a>
     </div>
   );

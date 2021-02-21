@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second';
 
@@ -9,28 +9,31 @@ import Highlight from '@components/highlight';
 import FourthView from '@components/Fourth';
 import Footer from '@components/footer';
 import SideMenu from '@components/sideMenu';
+import ClickOutsideRef from '../components/Hooks/ClickedOutside';
 
 type Props = {
   content: any;
 };
 const Home = ({content}: Props) => {
+  const {ref, isComponentVisible} = ClickOutsideRef(true);
   const [open, setOpen] = useState(false);
+
   const header = 'Sömn';
   return (
     <main className="main">
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
-        {open ? <section className="overlay" /> : <></>}
-      </nav>
 
-      <SideMenu open={open} closed={() => setOpen(!open)} />
+        {open && <section className="overlay" />}
+      </nav>
+      <SideMenu clickedOutsideRef={ref} open={open} closed={() => setOpen(!open)} />
+
       <FirstItem content={content} />
       <SecondItem content={content} />
       <ThridView content={content} />
       <Highlight header={header} content={content} />
       <FourthView content={content} />
-
       <Footer />
     </main>
   );
