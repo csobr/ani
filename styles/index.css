@@ -34,7 +34,7 @@ body {
 
 main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 nav {
   width: 90%;
@@ -47,16 +47,44 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav a {
+nav a,
+.side-menu a {
   font-size: 2rem;
   color: #000000;
   text-decoration: none;
+  text-transform: uppercase;
 }
 nav p {
   font-family: 'futura';
   font-weight: bold;
   text-transform: lowercase;
   font-size: 5rem;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.side-menu {
+  background-color: var(--background);
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 30vw;
+  z-index: 2;
+  transition: 0.3s ease-in-out;
+  overflow-x: scroll;
+}
+.side-menu a {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 /* First View */
@@ -266,23 +294,7 @@ footer p {
   main {
     margin: 0 auto;
     position: relative;
-    height: 100vh;
-  }
-
-  .side-menu {
-    display: flex;
-    background-color: var(--background);
-    height: 100vh;
-    top: 0;
-    right: 0;
-    position: absolute;
-    width: 30vw;
-    z-index: 1;
-    transition: 0.3s ease-in-out;
-    overflow-x: scroll;
-  }
-  .side-menu a {
-    padding: 1rem;
+    min-height: 100vh;
   }
   .second-view,
   .third-view,

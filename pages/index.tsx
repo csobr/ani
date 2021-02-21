@@ -21,8 +21,10 @@ const Home = ({content}: Props) => {
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
-        <SideMenu open={open} closed={() => setOpen(!open)} />
+        {open ? <section className="overlay" /> : <></>}
       </nav>
+
+      <SideMenu open={open} closed={() => setOpen(!open)} />
       <FirstItem content={content} />
       <SecondItem content={content} />
       <ThridView content={content} />
