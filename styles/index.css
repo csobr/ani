@@ -89,17 +89,15 @@ nav p {
 
 /* First View */
 .first-view {
-  width: 90%;
-  height: 70vh;
-  margin: 0 auto;
-  padding-top: 4rem;
+  margin: 1rem;
 }
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
-  height: 55%;
+  z-index: 1;
+  position: relative;
+  height: 90%;
 }
 h1 {
   font-size: 7.8rem;
@@ -112,6 +110,9 @@ h1 {
   grid-template-columns: repeat(2, minmax(10rem, 3fr));
   grid-auto-rows: 20rem;
   grid-gap: 1rem;
+  z-index: 0;
+  position: absolute;
+  top: 10%;
 }
 .rectangle {
   margin-left: 1rem;
@@ -154,8 +155,9 @@ h1 {
 .second-view,
 .third-view,
 .fourth-view {
-  padding-top: 2rem;
+  padding-top: 3rem;
   margin: 1rem;
+  height: auto;
 }
 
 .description p {
@@ -327,6 +329,7 @@ footer p {
     grid-auto-rows: 25rem;
     height: 55rem;
     width: 90%;
+    position: unset;
   }
   .rectangle {
     height: 15rem;
