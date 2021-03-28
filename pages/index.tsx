@@ -17,19 +17,18 @@ type Props = {
 const Home = ({content}: Props) => {
   const ref = useRef(null);
   const [open, setOpen] = useState(false);
-  ClickOutsideRef(ref, () => setOpen(false));
+  ClickOutsideRef(ref, () => setOpen(!open));
   const header = 'Sömn';
   return (
-    <main className="main" ref={ref}>
+    <main className="main">
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
 
-        {open && <section className="overlay" />}
+        {open && <section ref={ref} className="overlay" />}
       </nav>
       <>
         <SideMenu open={open} closed={() => setOpen(!open)} />
-
         <FirstItem content={content} />
         <SecondItem content={content} />
         <ThridView content={content} />
