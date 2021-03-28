@@ -15,25 +15,27 @@ type Props = {
   content: any;
 };
 const Home = ({content}: Props) => {
-  const {ref, isComponentVisible} = ClickOutsideRef(true);
+  const ref = useRef(null);
   const [open, setOpen] = useState(false);
-
+  ClickOutsideRef(ref, () => setOpen(false));
   const header = 'Sömn';
   return (
-    <main className="main">
+    <main className="main" ref={ref}>
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
 
         {open && <section className="overlay" />}
       </nav>
-      <SideMenu clickedOutsideRef={ref} open={open} closed={() => setOpen(!open)} />
+      <>
+        <SideMenu open={open} closed={() => setOpen(!open)} />
 
-      <FirstItem content={content} />
-      <SecondItem content={content} />
-      <ThridView content={content} />
-      <Highlight header={header} content={content} />
-      <FourthView content={content} />
+        <FirstItem content={content} />
+        <SecondItem content={content} />
+        <ThridView content={content} />
+        <Highlight header={header} content={content} />
+        <FourthView content={content} />
+      </>
       <Footer />
     </main>
   );

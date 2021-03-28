@@ -3,11 +3,10 @@ import React from 'react';
 interface Props {
   open: boolean;
   closed: any;
-  clickedOutsideRef: any;
 }
-const SideMenu = ({clickedOutsideRef, open, closed}: Props) => {
+const SideMenu = ({open, closed}: Props) => {
   return (
-    <div ref={clickedOutsideRef} className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
+    <div className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
       <a onClick={closed}>Close</a>
     </div>
   );
