@@ -32,8 +32,8 @@ const Home = ({content}: Props) => {
         <FirstItem content={content} />
         <SecondItem content={content} />
         <ThridView content={content} />
-        <Highlight header={header} content={content} />
         <FourthView content={content} />
+        <Highlight header={header} content={content} />
       </>
       <Footer />
     </main>
