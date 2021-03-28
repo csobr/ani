@@ -179,10 +179,10 @@ h1 {
 }
 
 .highlight {
-  background-color: #000320;
+  border: 1rem solid #000320;
+  color: #000320;
   height: auto;
   padding: 2.5rem;
-  color: #fff;
   line-height: 2.5rem;
   font-weight: 300;
 }
