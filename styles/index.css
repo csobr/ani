@@ -30,13 +30,13 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
   font-size: 16px;
   font-size: 1.6rem;
 }
 
 main {
   position: relative;
+  overflow-x: hidden;
 }
 nav {
   width: 90%;
@@ -54,6 +54,7 @@ nav a,
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 300;
 }
 nav p {
   font-family: 'futura';
@@ -79,7 +80,7 @@ nav p {
   right: 0;
   bottom: 0;
   position: absolute;
-  width: 30%;
+  width: 60%;
   z-index: 3;
   transition: 0.3s ease-in-out;
 }
@@ -105,17 +106,12 @@ nav p {
 }
 
 /* First View */
-.first-view {
-  margin: 1rem;
-  height: 100vh;
-}
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
   position: relative;
-  height: 100%;
 }
 h1 {
   font-size: 7.8rem;
@@ -125,12 +121,11 @@ h1 {
 }
 .shapes {
   display: grid;
-  grid-template-columns: repeat(2, minmax(10rem, 3fr));
-  grid-auto-rows: 20rem;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(2, minmax(15rem, 3fr));
+  grid-auto-rows: 18rem;
   z-index: 0;
   position: absolute;
-  top: 10rem;
+  top: 12rem;
 }
 .rectangle {
   margin-left: 1rem;
@@ -146,8 +141,8 @@ h1 {
   border-bottom: 12rem solid var(--green);
 }
 .circle {
-  width: 12rem;
-  height: 12rem;
+  width: 11rem;
+  height: 11rem;
   border-radius: 50%;
   background: var(--pink);
   bottom: 1rem;
@@ -158,27 +153,20 @@ h1 {
   background: var(--red);
   justify-self: end;
 }
-.app-description {
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 2.2rem;
-}
 .border {
   height: 1rem;
   width: 8rem;
   margin-bottom: 1rem;
 }
 /* second view */
-
+.first-view,
 .second-view,
 .third-view,
 .fourth-view {
-  padding-top: 3rem;
   margin: 1rem;
-  height: auto;
 }
-
-.description p {
+.description p,
+.app-description {
   font-weight: 300;
   line-height: 3rem;
   white-space: break-spaces;
@@ -292,17 +280,15 @@ progress::-moz-progress-bar {
 }
 
 footer {
-  font-family: 'Futura';
   display: flex;
   flex-direction: 'row';
-  height: 3rem;
+  height: 1rem;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 footer p {
-  padding-right: 0.2rem;
-  font-weight: 700;
+  padding-right: 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -315,6 +301,9 @@ footer p {
   .fourth-view {
     width: 90%;
     margin: 0 auto;
+  }
+  .side-menu {
+    width: 30%;
   }
   .first-view {
     display: grid;
@@ -331,9 +320,6 @@ footer p {
     font-size: 12rem;
     line-height: 13rem;
     font-weight: 800;
-  }
-  .app-description p {
-    line-height: 3.2rem;
   }
   .shapes {
     display: grid;
@@ -396,9 +382,6 @@ footer p {
   }
 }
 @media screen and (max-width: 1024px) {
-  .first-view {
-    height: 60vh;
-  }
   .description p,
   .image {
     grid-column: 1;

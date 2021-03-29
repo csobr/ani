@@ -9,7 +9,7 @@ const SideMenu = ({open, closed}: Props) => {
   return (
     <div className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
       <a onClick={closed}>Close</a>
-      <Spacer size={20} />
+      <Spacer size={15} />
       <div className="about">
         <h2>Vad är ani?</h2>
 

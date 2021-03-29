@@ -38,13 +38,17 @@ const Home = ({content}: Props) => {
       </nav>
 
       <SideMenu open={open} closed={() => setOpen(!open)} />
+      <Spacer size={1} />
       <FirstItem content={content} />
-      <SecondItem content={content} />
-      <ThridView content={content} />
-      <FourthView content={content} />
       <Spacer size={10} />
+      <SecondItem content={content} />
+      <Spacer size={3} />
+      <ThridView content={content} />
+      <Spacer size={3} />
+      <FourthView content={content} />
+      <Spacer size={5} />
       <Highlight header={header} content={content} />
-      <Spacer size={15} />
+      <Spacer size={10} />
       <Footer />
     </main>
   );

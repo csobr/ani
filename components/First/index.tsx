@@ -7,7 +7,7 @@ const FirstItem = ({content}: Props) => {
   return (
     <section className="first-view">
       <div className="header">
-        <h1>Min tonårs-{'\n'}hjärna</h1>{' '}
+        <h1>Min tonårs-{'\n'}hjärna</h1>
         <div className="app-description">
           <p>
             Under tonårstiden sker det många förändringar i livet. Man kommer in puberteten och kroppen förändras
