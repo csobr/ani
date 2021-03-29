@@ -90,6 +90,19 @@ nav p {
   margin: 0 auto;
   padding: 1rem;
 }
+.about {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 25rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  align-items: center;
+}
+.about p {
+  line-height: 4rem;
+  font-weight: 300;
+}
 
 /* First View */
 .first-view {
