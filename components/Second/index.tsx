@@ -1,6 +1,6 @@
 import React from 'react';
 import {RichText} from 'prismic-reactjs';
-import Border from '../../constants/border';
+import Border from '../border';
 import Callout from '@components/callout';
 import Image from '../image';
 import Poll from '@components/poll';
@@ -31,8 +31,8 @@ const SecondItem = ({content}: Props) => {
       <Callout
         text="Hjärnan förändras beroende på vad du tränar på."
         backgroundColor={'#f1d02c'}
-        borderColor={'#000000'}
-        textColor={'#000000'}
+        borderColor={'#000320'}
+        textColor={'#000320'}
       />
     </div>
   );

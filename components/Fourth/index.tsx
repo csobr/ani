@@ -1,5 +1,5 @@
 import React from 'react';
-import Border from 'constants/border';
+import Border from '@components/border';
 import Image from '../image';
 import {RichText} from 'prismic-reactjs';
 import Callout from '@components/callout';
@@ -24,7 +24,7 @@ const FourthView = ({content}) => (
     <br />
     <Callout
       text="Hjärnan förändras beroende på vad du tränar på."
-      backgroundColor={'#000000'}
+      backgroundColor={'#000320'}
       borderColor={'#f1d02c'}
       textColor={'#f1d02c'}
     />
