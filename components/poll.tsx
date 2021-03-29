@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import ProgressBar from './progressBar';
+import ProgressBar from './ProgressBar';
 
 const Poll = () => {
   const [voteData, setVoteData] = useState(null);

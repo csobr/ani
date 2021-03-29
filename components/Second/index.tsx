@@ -1,9 +1,9 @@
 import React from 'react';
 import {RichText} from 'prismic-reactjs';
-import Border from '../border';
-import Callout from '@components/callout';
-import Image from '../image';
-import Poll from '@components/poll';
+import Border from '@components/Border';
+import Callout from '@components/Callout';
+import Image from '@components/Image';
+import Poll from '@components/Poll';
 
 type Props = {
   content: any;

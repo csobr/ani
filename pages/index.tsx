@@ -1,15 +1,15 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import FirstItem from '@components/First';
-import SecondItem from '@components/Second';
+import SecondItem from '@components/Second/index';
 
 import {Client} from '../prismic-configuration';
 import {GetServerSideProps} from 'next';
 import ThridView from '@components/Third';
-import Highlight from '@components/highlight';
-import FourthView from '@components/Fourth';
-import Footer from '@components/footer';
-import SideMenu from '@components/sideMenu';
-import ClickOutsideRef from '../components/Hooks/ClickedOutside';
+import Highlight from '@components/Highlight';
+import FourthView from '@components/Fourth/index';
+import Footer from '@components/Footer';
+import SideMenu from '@components/SideMenu';
+import ClickOutsideRef from '../Hooks/ClickedOutside';
 import Spacer from '@components/Spacer';
 
 type Props = {
