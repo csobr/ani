@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second/index';
 
@@ -18,8 +18,16 @@ type Props = {
 const Home = ({content}: Props) => {
   const ref = useRef(null);
   const [open, setOpen] = useState(false);
-  ClickOutsideRef(ref, () => setOpen(!open));
+  ClickOutsideRef(ref, () => setOpen(false));
   const header = 'Sömn';
+
+  useEffect(() => {
+    open ? document.body.classList.add('overflow') : document.body.classList.remove('overflow');
+
+    return () => {
+      document.body.classList.remove('oveflow');
+    };
+  });
   return (
     <main className="main">
       <nav>

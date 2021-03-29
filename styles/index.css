@@ -30,6 +30,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
   font-size: 16px;
   font-size: 1.6rem;
 }
@@ -58,7 +59,10 @@ nav p {
   font-family: 'futura';
   font-weight: bold;
   text-transform: lowercase;
-  font-size: 5rem;
+  font-size: 3rem;
+}
+.overflow {
+  overflow-y: hidden;
 }
 .overlay {
   position: absolute;
