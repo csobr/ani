@@ -3,12 +3,14 @@
   "plugins": [
     [
       "module-resolver",
+
       {
         "root": ["./"],
         "alias": {
           "@components": "./components"
         }
       }
-    ]
+    ],
+    ["styled-components", {"ssr": true}]
   ]
 }

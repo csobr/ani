@@ -10,6 +10,7 @@ import FourthView from '@components/Fourth';
 import Footer from '@components/footer';
 import SideMenu from '@components/sideMenu';
 import ClickOutsideRef from '../components/Hooks/ClickedOutside';
+import Spacer from '@components/Spacer';
 
 type Props = {
   content: any;
@@ -27,14 +28,15 @@ const Home = ({content}: Props) => {
 
         {open && <section ref={ref} className="overlay" />}
       </nav>
-      <>
-        <SideMenu open={open} closed={() => setOpen(!open)} />
-        <FirstItem content={content} />
-        <SecondItem content={content} />
-        <ThridView content={content} />
-        <FourthView content={content} />
-        <Highlight header={header} content={content} />
-      </>
+
+      <SideMenu open={open} closed={() => setOpen(!open)} />
+      <FirstItem content={content} />
+      <SecondItem content={content} />
+      <ThridView content={content} />
+      <FourthView content={content} />
+      <Spacer size={10} />
+      <Highlight header={header} content={content} />
+      <Spacer size={15} />
       <Footer />
     </main>
   );
