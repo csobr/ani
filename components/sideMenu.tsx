@@ -1,6 +1,5 @@
 import React from 'react';
 import Spacer from './Spacer';
-import {motion} from 'framer-motion';
 
 interface Props {
   open: boolean;

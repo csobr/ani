@@ -35,8 +35,8 @@ body {
 }
 
 main {
-  position: relative;
   overflow-x: hidden;
+  position: relative;
 }
 nav {
   width: 90%;
@@ -166,6 +166,7 @@ h1 {
 .fourth-view {
   margin: 1rem;
 }
+
 .description p,
 .app-description {
   font-weight: 300;
@@ -185,11 +186,12 @@ h1 {
 }
 
 .highlight {
-  border: 1rem solid var(--night);
+  background-color: var(--night);
   height: auto;
   padding: 2.5rem;
   line-height: 2.5rem;
   font-weight: 300;
+  color: var(--background);
 }
 .star-container {
   display: flex;
@@ -299,10 +301,12 @@ footer p {
   .first-view,
   .second-view,
   .third-view,
-  .fourth-view {
-    width: 90%;
+  .fourth-view,
+  .highlight {
     margin: 0 auto;
+    width: 90%;
   }
+
   .side-menu {
     width: 30%;
   }

@@ -4,10 +4,11 @@ import {RichText} from 'prismic-reactjs';
 
 type Props = {
   content: any;
+  getRef: any;
 };
-const ThridView = ({content}: Props) => {
+const ThridView = ({content, getRef}: Props) => {
   return (
-    <div className="third-view">
+    <div ref={getRef} className="third-view">
       <Border color={'#f1d02c'} />
       <br />
       <div>

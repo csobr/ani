@@ -1,5 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {GetServerSideProps} from 'next';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 
 import {Client} from '../prismic-configuration';
 import ClickOutsideRef from '../hooks/ClickedOutside';
@@ -22,7 +24,7 @@ const Home = ({content}: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   ClickOutsideRef(ref, () => setOpen(false));
-
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     open ? document.body.classList.add('overflow') : document.body.classList.remove('overflow');
     return () => {
@@ -30,23 +32,53 @@ const Home = ({content}: Props) => {
     };
   });
 
+  const partOneRef = useRef(null);
+  const partTwoRef = useRef(null);
+  const partThreeRef = useRef(null);
+  const partFourRef = useRef(null);
+
+  const tl = gsap.timeline();
+  gsap.defaults({ease: 'none'});
+  useEffect(() => {
+    if (!process.browser) return;
+
+    const partOne = partOneRef.current;
+    const partTwo = partTwoRef.current;
+    const partThree = partThreeRef.current;
+    const partFour = partFourRef.current;
+
+    tl.fromTo(partOne, {opacity: 0, y: 0}, {opacity: 1, y: -100})
+      .fromTo(partTwo, {opacity: 0, y: 0}, {opacity: 1, y: -100})
+      .fromTo(partThree, {opacity: 0, y: 0}, {opacity: 1, y: -100});
+    // .fromTo(partFour, {opacity: 0, y: 100}, {opacity: 1, y: -100});
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: partOne,
+      scrub: true,
+      toggleActions: 'none',
+    });
+  }, []);
+
   return (
     <main className="main">
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
-
         {open && <section ref={ref} className="overlay" />}
       </nav>
       <SideMenu open={open} closed={() => setOpen(!open)} />
       <Spacer size={1} />
       <FirstItem content={content} />
-      <Spacer size={1} />
-      <SecondItem content={content} /> <Spacer size={3} />
-      <ThirdView content={content} /> <Spacer size={3} />
-      <FourthView content={content} />
       <Spacer size={5} />
-      <Highlight header={header} content={content} /> <Spacer size={10} />
+      <SecondItem getRef={partOneRef} content={content} />
+      <Spacer size={5} />
+      <ThirdView getRef={partTwoRef} content={content} />
+      <Spacer size={5} />
+      <FourthView getRef={partThreeRef} content={content} />
+      <Spacer size={5} />
+      <Highlight getRef={partFourRef} header={header} content={content} />
+      <Spacer size={5} />
       <Footer />
     </main>
   );
