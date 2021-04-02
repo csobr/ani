@@ -4,9 +4,10 @@ import React from 'react';
 type Props = {
   content: string;
   header: string;
+  getRef: any;
 };
-const Highlight = ({content, header}: Props) => (
-  <div className="highlight">
+const Highlight = ({content, header, getRef}: Props) => (
+  <div ref={getRef} className="highlight" data-scrollcolor="#000320">
     <div className="star-container">
       <div className="star" />
     </div>

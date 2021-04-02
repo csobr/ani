@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import ProgressBar from './ProgressBar';
 
-const Poll = () => {
+type Props = {
+  a: string;
+  b: string;
+  c: string;
+};
+
+const Poll: React.FC<Props> = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);

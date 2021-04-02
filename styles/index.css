@@ -34,9 +34,15 @@ body {
   font-size: 1.6rem;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 main {
-  position: relative;
   overflow-x: hidden;
+  position: relative;
+  border: 1rem solid;
+  scrollbar-width: none;
 }
 nav {
   width: 90%;
@@ -83,6 +89,7 @@ nav p {
   width: 60%;
   z-index: 3;
   transition: 0.3s ease-in-out;
+  transition-duration: 0.6s;
 }
 
 .side-menu a {
@@ -158,13 +165,13 @@ h1 {
   width: 8rem;
   margin-bottom: 1rem;
 }
-/* second view */
-.first-view,
-.second-view,
-.third-view,
-.fourth-view {
-  margin: 1rem;
+.inner {
+  width: 90%;
+  margin: 0 auto;
+  z-index: 1;
 }
+/* second view */
+
 .description p,
 .app-description {
   font-weight: 300;
@@ -295,12 +302,8 @@ footer p {
 /* Desktop styles */
 
 @media screen and (min-width: 34rem) {
-  .first-view,
-  .second-view,
-  .third-view,
-  .fourth-view {
-    width: 90%;
-    margin: 0 auto;
+  main {
+    border: 2rem solid;
   }
   .side-menu {
     width: 30%;
@@ -309,11 +312,12 @@ footer p {
     display: grid;
     padding-top: 4rem;
     height: 90vh;
-    margin: 0 auto;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    width: 90%;
+    margin: 0 auto;
   }
   .header {
-    width: 50rem;
+    width: 40rem;
     height: 55rem;
   }
   h1 {
@@ -323,21 +327,23 @@ footer p {
   }
   .shapes {
     display: grid;
-    grid-auto-rows: 25rem;
+    grid-auto-rows: 28rem;
     height: 55rem;
-    width: 90%;
     position: unset;
   }
   .rectangle {
+    margin-top: 3rem;
     height: 15rem;
     width: 30rem;
   }
   .triangel {
+    margin-top: -2rem;
     border-left: 15rem solid transparent;
     border-right: 15rem solid transparent;
-    border-bottom: 23rem solid var(--green);
+    border-bottom: 26rem solid var(--green);
   }
   .circle {
+    margin-top: -2rem;
     width: 26rem;
     height: 26rem;
   }

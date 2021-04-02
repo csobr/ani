@@ -7,7 +7,7 @@ interface Props {
 }
 const SideMenu = ({open, closed}: Props) => {
   return (
-    <div className="side-menu" style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}}>
+    <div style={{transform: open ? 'translateX(0)' : 'translateX(100%)'}} className="side-menu">
       <a onClick={closed}>Close</a>
       <Spacer size={15} />
       <div className="about">
