@@ -11,7 +11,7 @@ type Props = {
 
 const FourthView = ({content, getRef}: Props) => (
   <div ref={getRef} className="fourth-view">
-    <Border color={'#40a857'} />
+    <Border color={'#e88fa3'} />
     <br />
     <h2>{RichText.asText(content.data.title)}</h2>
     <br />

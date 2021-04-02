@@ -47,16 +47,29 @@ const Home = ({content}: Props) => {
     const partThree = partThreeRef.current;
     const partFour = partFourRef.current;
 
-    tl.fromTo(partOne, {opacity: 0, y: 0}, {opacity: 1, y: -100})
-      .fromTo(partTwo, {opacity: 0, y: 0}, {opacity: 1, y: -100})
-      .fromTo(partThree, {opacity: 0, y: 0}, {opacity: 1, y: -100});
-    // .fromTo(partFour, {opacity: 0, y: 100}, {opacity: 1, y: -100});
+    gsap.fromTo(
+      partOne,
+      {opacity: 0, yPercent: 0},
+      {
+        opacity: 1,
+        yPercent: -10,
+        scrollTrigger: {
+          trigger: partOne,
+          start: 'top center',
+          end: 'center bottom',
+          markers: true,
+        },
+      }
+    );
+
+    tl.fromTo(partTwo, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30})
+      .fromTo(partThree, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30})
+      .fromTo(partFour, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30});
 
     ScrollTrigger.create({
       animation: tl,
-      trigger: partOne,
-      scrub: true,
-      toggleActions: 'none',
+      trigger: partTwo,
+      scrub: 1,
     });
   }, []);
 

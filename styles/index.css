@@ -186,12 +186,11 @@ h1 {
 }
 
 .highlight {
-  background-color: var(--night);
+  border: 1rem solid var(--night);
   height: auto;
   padding: 2.5rem;
   line-height: 2.5rem;
   font-weight: 300;
-  color: var(--background);
 }
 .star-container {
   display: flex;

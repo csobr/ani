@@ -22,9 +22,13 @@ const SecondItem = ({content, getRef}: Props) => {
       </div>
       <br />
       <br />
+      <br />
+      <br />
       <h3>När försökte du sist imponera på för dina kompisar?</h3>
       <br />
       <Poll a={'idag'} b={'ig'} c={'minns inte'} />
+      <br />
+      <br />
       <br />
       <br />
       <Callout
