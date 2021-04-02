@@ -8,7 +8,7 @@ type Props = {
 };
 const ThridView = ({content, getRef}: Props) => {
   return (
-    <div className="third-view">
+    <div className="third-view" data-scrollcolor="#f1d02c">
       <div ref={getRef} className="inner">
         <Border color={'#f1d02c'} />
         <br />

@@ -11,7 +11,7 @@ type Props = {
 };
 const SecondItem = ({content, getRef}: Props) => {
   return (
-    <div ref={getRef} className="second-view">
+    <div ref={getRef} className="second-view" data-scrollcolor="#eb483d">
       <div className="inner">
         <Border color={'#eb483d'} />
         <br />

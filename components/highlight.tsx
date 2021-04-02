@@ -7,7 +7,7 @@ type Props = {
   getRef: any;
 };
 const Highlight = ({content, header, getRef}: Props) => (
-  <div ref={getRef} className="highlight">
+  <div ref={getRef} className="highlight" data-scrollcolor="#000320">
     <div className="star-container">
       <div className="star" />
     </div>

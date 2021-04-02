@@ -37,7 +37,7 @@ body {
 main {
   overflow-x: hidden;
   position: relative;
-  border: 2rem solid #000320;
+  border: 2rem solid;
 }
 nav {
   width: 90%;

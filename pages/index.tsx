@@ -36,6 +36,7 @@ const Home = ({content}: Props) => {
   const partTwoRef = useRef(null);
   const partThreeRef = useRef(null);
   const partFourRef = useRef(null);
+  const backgroundColorRef = useRef(null);
 
   const tl = gsap.timeline();
   gsap.defaults({ease: 'none'});
@@ -49,22 +50,34 @@ const Home = ({content}: Props) => {
 
     gsap.fromTo(
       partOne,
-      {opacity: 0, yPercent: 0},
+      {autoAlpha: 0, yPercent: 0},
       {
-        opacity: 1,
+        autoAlpha: 1,
         yPercent: -10,
         scrollTrigger: {
           trigger: partOne,
           start: 'top center',
           end: 'center bottom',
-          markers: true,
         },
       }
     );
+    tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
+      .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
+      .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30});
 
-    tl.fromTo(partTwo, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30})
-      .fromTo(partThree, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30})
-      .fromTo(partFour, {opacity: 0, yPercent: 0}, {opacity: 1, yPercent: -30});
+    gsap.set(backgroundColorRef.current, {borderColor: '#000320'});
+
+    const scrollColorElement = document.querySelectorAll('[data-scrollcolor]');
+    scrollColorElement.forEach((colorSection, i) => {
+      const previousColor = i === 0 ? '#000320' : scrollColorElement[i - 1].dataset.scrollcolor;
+      ScrollTrigger.create({
+        trigger: colorSection,
+        start: 'center bottom',
+        onEnter: () =>
+          gsap.to('main', {borderColor: colorSection.dataset.scrollcolor, overwrite: 'auto', autoAlpha: 1}),
+        onLeaveBack: () => gsap.to('main', {borderColor: previousColor, overwrite: 'auto'}),
+      });
+    });
 
     ScrollTrigger.create({
       animation: tl,
@@ -74,7 +87,7 @@ const Home = ({content}: Props) => {
   }, []);
 
   return (
-    <main className="main">
+    <main className="main" ref={backgroundColorRef}>
       <nav>
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
@@ -91,7 +104,6 @@ const Home = ({content}: Props) => {
       <FourthView getRef={partThreeRef} content={content} />
       <Spacer size={5} />
       <Highlight getRef={partFourRef} header={header} content={content} />
-      <Spacer size={5} />
       <Footer />
     </main>
   );

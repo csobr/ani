@@ -10,7 +10,7 @@ type Props = {
 };
 
 const FourthView = ({content, getRef}: Props) => (
-  <div className="fourth-view">
+  <div className="fourth-view " data-scrollcolor="#e88fa3">
     <div ref={getRef} className="inner">
       <Border color={'#e88fa3'} />
       <br />
