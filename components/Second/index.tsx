@@ -12,31 +12,33 @@ type Props = {
 const SecondItem = ({content, getRef}: Props) => {
   return (
     <div ref={getRef} className="second-view">
-      <Border color={'#eb483d'} />
-      <br />
-      <h2>{RichText.asText(content.data.title)}</h2>
-      <br></br>
-      <div className="description">
-        <p>{RichText.asText(content.data.content)}</p>
-        <Image image={content.data.image.url} alt={content.data.image.alt} size={340} />
+      <div className="inner">
+        <Border color={'#eb483d'} />
+        <br />
+        <h2>{RichText.asText(content.data.title)}</h2>
+        <br></br>
+        <div className="description">
+          <p>{RichText.asText(content.data.content)}</p>
+          <Image image={content.data.image.url} alt={content.data.image.alt} size={340} />
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <h3>När försökte du sist imponera på för dina kompisar?</h3>
+        <br />
+        <Poll a={'idag'} b={'ig'} c={'minns inte'} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Callout
+          text="Hjärnan förändras beroende på vad du tränar på."
+          backgroundColor={'#f1d02c'}
+          borderColor={'#000320'}
+          textColor={'#000320'}
+        />
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <h3>När försökte du sist imponera på för dina kompisar?</h3>
-      <br />
-      <Poll a={'idag'} b={'ig'} c={'minns inte'} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Callout
-        text="Hjärnan förändras beroende på vad du tränar på."
-        backgroundColor={'#f1d02c'}
-        borderColor={'#000320'}
-        textColor={'#000320'}
-      />
     </div>
   );
 };

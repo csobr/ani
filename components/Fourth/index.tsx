@@ -10,23 +10,25 @@ type Props = {
 };
 
 const FourthView = ({content, getRef}: Props) => (
-  <div ref={getRef} className="fourth-view">
-    <Border color={'#e88fa3'} />
-    <br />
-    <h2>{RichText.asText(content.data.title)}</h2>
-    <br />
-    <div className="description">
-      <p>{RichText.asText(content.data.content)}</p>
-      <Image image={'/brain.webp'} alt={'dopamin'} size={340} />
+  <div className="fourth-view">
+    <div ref={getRef} className="inner">
+      <Border color={'#e88fa3'} />
+      <br />
+      <h2>{RichText.asText(content.data.title)}</h2>
+      <br />
+      <div className="description">
+        <p>{RichText.asText(content.data.content)}</p>
+        <Image image={'/brain.webp'} alt={'dopamin'} size={340} />
+      </div>
+      <br />
+      <br />
+      <Callout
+        text="Hjärnan förändras beroende på vad du tränar på."
+        backgroundColor={'#000320'}
+        borderColor={'#f1d02c'}
+        textColor={'#f1d02c'}
+      />
     </div>
-    <br />
-    <br />
-    <Callout
-      text="Hjärnan förändras beroende på vad du tränar på."
-      backgroundColor={'#000320'}
-      borderColor={'#f1d02c'}
-      textColor={'#f1d02c'}
-    />
   </div>
 );
 export default FourthView;
