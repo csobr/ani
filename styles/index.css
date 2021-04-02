@@ -166,12 +166,6 @@ h1 {
   z-index: 1;
 }
 /* second view */
-.first-view,
-.second-view,
-.third-view,
-.fourth-view {
-  margin: 1rem;
-}
 
 .description p,
 .app-description {
