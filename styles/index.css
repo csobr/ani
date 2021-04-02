@@ -31,7 +31,6 @@ body {
   width: 100%;
   overflow-x: hidden;
   font-size: 16px;
-  font-size: 1.6rem;
 }
 
 ::-webkit-scrollbar {
@@ -170,7 +169,6 @@ h1 {
   margin: 0 auto;
   z-index: 1;
 }
-/* second view */
 
 .description p,
 .app-description {
@@ -377,9 +375,9 @@ footer p {
     font-size: 2rem;
   }
   .highlight {
-    height: auto;
     padding: 4rem;
     margin: 0 auto;
+    width: 90%;
   }
 
   .highlight p {

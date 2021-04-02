@@ -40,7 +40,7 @@ const Home = ({content}: Props) => {
   const partFourRef = useRef(null);
   const backgroundColorRef = useRef(null);
 
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({defaults: {ease: 'none'}});
   gsap.defaults({ease: 'none'});
 
   useEffect(() => {
@@ -86,6 +86,7 @@ const Home = ({content}: Props) => {
       animation: tl,
       trigger: partTwo,
       scrub: 1,
+      once: true,
     });
   }, []);
 
