@@ -34,10 +34,15 @@ body {
   font-size: 1.6rem;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 main {
   overflow-x: hidden;
   position: relative;
-  border: 2rem solid;
+  border: 1rem solid;
+  scrollbar-width: none;
 }
 nav {
   width: 90%;
@@ -297,6 +302,9 @@ footer p {
 /* Desktop styles */
 
 @media screen and (min-width: 34rem) {
+  main {
+    border: 2rem solid;
+  }
   .side-menu {
     width: 30%;
   }

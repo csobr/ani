@@ -23,8 +23,10 @@ const Home = ({content}: Props) => {
   const header = 'Sömn';
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+
   ClickOutsideRef(ref, () => setOpen(false));
   gsap.registerPlugin(ScrollTrigger);
+
   useEffect(() => {
     open ? document.body.classList.add('overflow') : document.body.classList.remove('overflow');
     return () => {
@@ -40,6 +42,7 @@ const Home = ({content}: Props) => {
 
   const tl = gsap.timeline();
   gsap.defaults({ease: 'none'});
+
   useEffect(() => {
     if (!process.browser) return;
 
