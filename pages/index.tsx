@@ -14,6 +14,7 @@ import Highlight from '@components/Highlight';
 import Footer from '@components/Footer';
 import SideMenu from '@components/SideMenu';
 import Spacer from '@components/Spacer';
+import DarkModeToggle from '@components/DarkModeToggle';
 
 type Props = {
   content: any;
@@ -96,7 +97,9 @@ const Home = ({content}: Props) => {
         <p className="logo">ani</p>
         <a onClick={() => setOpen(!open)}>Om</a>
         {open && <section ref={ref} className="overlay" />}
+        <DarkModeToggle />
       </nav>
+
       <SideMenu open={open} closed={() => setOpen(!open)} />
       <Spacer size={1} />
       <FirstItem content={content} />
