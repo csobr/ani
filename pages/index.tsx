@@ -95,9 +95,11 @@ const Home = ({content}: Props) => {
     <main className="main" ref={backgroundColorRef}>
       <nav>
         <p className="logo">ani</p>
-        <a onClick={() => setOpen(!open)}>Om</a>
-        {open && <section ref={ref} className="overlay" />}
-        <DarkModeToggle />
+        <div className="nav-align-left">
+          <DarkModeToggle />
+          <a onClick={() => setOpen(!open)}>Om</a>
+          {open && <section ref={ref} className="overlay" />}
+        </div>
       </nav>
 
       <SideMenu open={open} closed={() => setOpen(!open)} />

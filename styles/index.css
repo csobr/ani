@@ -47,11 +47,18 @@ nav {
   width: 90%;
   height: 7rem;
   margin: 0 auto;
-  text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
+}
+
+.nav-align-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
 }
 nav a,
 .side-menu a {
@@ -59,6 +66,9 @@ nav a,
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
+}
+nav a {
+  margin-left: 3rem;
 }
 nav p {
   font-family: 'futura';
@@ -284,6 +294,30 @@ progress::-moz-progress-bar {
   border-radius: 3rem;
 }
 
+.custom-checkbox {
+  position: relative;
+}
+
+.custom-checkbox input[type='checkbox'] {
+  top: 0.7rem;
+  left: 0.7rem;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.00001;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+}
+.custom-checkbox svg {
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0 0 3rem 1rem var(--background), 0 0 1rem 0.5rem var(--night);
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+.checkbox__bg {
+  fill: var(--background-color);
+}
 footer {
   display: flex;
   flex-direction: 'row';
