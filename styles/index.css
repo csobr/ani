@@ -25,13 +25,12 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--background);
-  color: var(--night);
+  background-color: var(--background-color);
+  color: var(--color);
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
   font-size: 16px;
-  font-size: 1.6rem;
 }
 
 ::-webkit-scrollbar {
@@ -48,12 +47,18 @@ nav {
   width: 90%;
   height: 7rem;
   margin: 0 auto;
-  text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+
+.nav-align-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
 }
 nav a,
 .side-menu a {
@@ -61,6 +66,9 @@ nav a,
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
+}
+nav a {
+  margin-left: 3rem;
 }
 nav p {
   font-family: 'futura';
@@ -81,7 +89,7 @@ nav p {
   z-index: 2;
 }
 .side-menu {
-  background-color: var(--background);
+  background-color: var(--background-color);
   top: 0;
   right: 0;
   bottom: 0;
@@ -170,7 +178,6 @@ h1 {
   margin: 0 auto;
   z-index: 1;
 }
-/* second view */
 
 .description p,
 .app-description {
@@ -191,7 +198,7 @@ h1 {
 }
 
 .highlight {
-  border: 1rem solid var(--night);
+  border: 1rem solid var(--color);
   height: auto;
   padding: 2.5rem;
   line-height: 2.5rem;
@@ -236,11 +243,12 @@ h1 {
   padding: 0.5rem;
   margin-bottom: 1rem;
   list-style: none;
-  border: 0.2rem solid var(--primary);
+  border: 0.2rem solid var(--color);
   border-radius: 3rem;
   line-height: 1rem;
 }
 .poll li button {
+  color: var(--color);
   padding: 0.3rem;
   width: 100%;
   border: none;
@@ -261,18 +269,18 @@ progress {
   height: 3.5rem;
   width: 100%;
   border-radius: 3rem;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--color);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: transparent;
 }
 progress::-webkit-progress-bar {
-  background-color: var(--background);
+  background-color: var(--background-color);
   border-radius: 3rem;
 }
 progress::-moz-progress-bar {
-  background-color: var(--background);
+  background-color: var(--background-color);
   border-radius: 3rem;
 }
 progress::-webkit-progress-value {
@@ -286,6 +294,30 @@ progress::-moz-progress-bar {
   border-radius: 3rem;
 }
 
+.custom-checkbox {
+  position: relative;
+}
+
+.custom-checkbox input[type='checkbox'] {
+  top: 0.7rem;
+  left: 0.7rem;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.00001;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+}
+.custom-checkbox svg {
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0 0 3rem 1rem var(--background), 0 0 1rem 0.5rem var(--night);
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+.checkbox__bg {
+  fill: var(--background-color);
+}
 footer {
   display: flex;
   flex-direction: 'row';
@@ -377,9 +409,9 @@ footer p {
     font-size: 2rem;
   }
   .highlight {
-    height: auto;
     padding: 4rem;
     margin: 0 auto;
+    width: 90%;
   }
 
   .highlight p {

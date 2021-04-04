@@ -14,6 +14,7 @@ import Highlight from '@components/Highlight';
 import Footer from '@components/Footer';
 import SideMenu from '@components/SideMenu';
 import Spacer from '@components/Spacer';
+import DarkModeToggle from '@components/DarkModeToggle';
 
 type Props = {
   content: any;
@@ -40,7 +41,7 @@ const Home = ({content}: Props) => {
   const partFourRef = useRef(null);
   const backgroundColorRef = useRef(null);
 
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({defaults: {ease: 'none'}});
   gsap.defaults({ease: 'none'});
 
   useEffect(() => {
@@ -86,6 +87,7 @@ const Home = ({content}: Props) => {
       animation: tl,
       trigger: partTwo,
       scrub: 1,
+      once: true,
     });
   }, []);
 
@@ -93,9 +95,13 @@ const Home = ({content}: Props) => {
     <main className="main" ref={backgroundColorRef}>
       <nav>
         <p className="logo">ani</p>
-        <a onClick={() => setOpen(!open)}>Om</a>
-        {open && <section ref={ref} className="overlay" />}
+        <div className="nav-align-left">
+          <DarkModeToggle />
+          <a onClick={() => setOpen(!open)}>Om</a>
+          {open && <section ref={ref} className="overlay" />}
+        </div>
       </nav>
+
       <SideMenu open={open} closed={() => setOpen(!open)} />
       <Spacer size={1} />
       <FirstItem content={content} />
