@@ -13,9 +13,30 @@ const DarkModeToggle = () => {
           setThemeMode(e.target.checked ? 'dark' : 'light');
         }}
       />
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <circle className="checkbox__bg" cx="50" cy="50" r="50" />
-      </svg>
+      {themeMode === 'dark' ? (
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+          className="checkbox__dark">
+          <circle cx="50" cy="50" r="50" />
+        </svg>
+      ) : (
+        <svg
+          viewBox="0 0 30 30"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+          className="checkbox__light">
+          <circle
+            cx="50%"
+            cy="50%"
+            r="15
+          "
+          />
+        </svg>
+      )}
     </label>
   );
 };
