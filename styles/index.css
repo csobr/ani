@@ -57,7 +57,6 @@ nav {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   height: 3rem;
 }
 nav a,
@@ -311,12 +310,18 @@ progress::-moz-progress-bar {
 .custom-checkbox svg {
   width: 2rem;
   height: 2rem;
-  box-shadow: 0 0 3rem 1rem var(--background), 0 0 1rem 0.5rem var(--night);
   border-radius: 50%;
-  transition: all 0.1s ease;
+  margin-top: 0.3rem;
 }
-.checkbox__bg {
-  fill: var(--background-color);
+
+.checkbox__dark {
+  box-shadow: 0.7rem 0.1rem 0 0 var(--color);
+}
+.checkbox__light circle:last-of-type {
+  stroke: var(--color);
+  stroke-width: 1.4rem;
+  stroke-dasharray: 3, 7.5;
+  fill: none;
 }
 footer {
   display: flex;
