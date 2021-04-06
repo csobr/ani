@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ProgressBar from './ProgressBar';
+import {firebase} from '../database/Firebase';
 
 type Props = {
   a: string;
@@ -12,6 +13,9 @@ const Poll: React.FC<Props> = () => {
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
   const url = 'http:///localhost:3000/api/pollApi';
+
+  const db = firebase.database();
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -21,17 +25,8 @@ const Poll: React.FC<Props> = () => {
         data.forEach((obj) => {
           sum += obj.votes;
         });
-
         setTotalVotes(sum);
-        // testing
-        const getTotalVotes = sessionStorage.getItem('totalVotes');
-        if (getTotalVotes) {
-          setTotalVotes(JSON.parse(getTotalVotes));
-        }
-        let getVoteData = sessionStorage.getItem('voteData');
-        if (getVoteData) {
-          setVoteData(JSON.parse(getVoteData));
-        }
+
         let didVote = sessionStorage.getItem('voted');
         if (didVote) {
           setVoted(JSON.parse(didVote));
@@ -39,6 +34,12 @@ const Poll: React.FC<Props> = () => {
       });
   }, []);
 
+  function writePollResults() {
+    db.ref('poll/').set({
+      totalVotes: totalVotes + 1,
+      voteData: voteData,
+    });
+  }
   const submitVote = (e) => {
     if (!voted) {
       const voteSelected = e.target.dataset.id;
@@ -46,18 +47,15 @@ const Poll: React.FC<Props> = () => {
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
       setVoted(!voted);
-      sessionStorage.setItem('totalVotes', JSON.stringify(totalVotes + 1));
-      sessionStorage.setItem('voteData', JSON.stringify(voteData));
       sessionStorage.setItem('voted', JSON.stringify(!voted));
-
       const options = {
         method: 'POST',
         body: JSON.stringify(voteData),
         headers: {'Content-Type': 'application/json'},
       };
-
       fetch(url).then((res) => res.json());
     }
+    writePollResults();
   };
 
   let pollOptions;

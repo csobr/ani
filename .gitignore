@@ -2,3 +2,5 @@
 node_modules
 .next
 prismic-configuration.ts
+Firebase.ts
+.env
