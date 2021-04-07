@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ProgressBar from './ProgressBar';
-import {firebase} from '../database/Firebase';
+import firebase from '../database/Firebase';
 
 type Props = {
   a: string;
@@ -17,25 +17,34 @@ const Poll: React.FC<Props> = () => {
   const db = firebase.database();
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setVoteData(data);
-        let sum = 0;
-        data.forEach((obj) => {
-          sum += obj.votes;
-        });
-        setTotalVotes(sum);
+    const getPollResults = db.ref('poll/');
 
-        let didVote = sessionStorage.getItem('voted');
-        if (didVote) {
-          setVoted(JSON.parse(didVote));
-        }
-      });
+    getPollResults.on('value', (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        setVoteData(data.voteData);
+        setTotalVotes(data.totalVotes);
+      } else {
+        const fetchPollData = async () => {
+          const res = await fetch(url);
+          const pollData = await res.json();
+
+          return pollData;
+        };
+        fetchPollData().then((data) => {
+          setVoteData(data);
+          let sum = 0;
+          data.forEach((obj) => {
+            sum += obj.votes;
+          });
+          setTotalVotes(sum);
+        });
+      }
+    });
   }, []);
 
   function writePollResults() {
-    db.ref('poll/').set({
+    db.ref('poll/').update({
       totalVotes: totalVotes + 1,
       voteData: voteData,
     });
@@ -47,14 +56,9 @@ const Poll: React.FC<Props> = () => {
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
       setVoted(!voted);
-      sessionStorage.setItem('voted', JSON.stringify(!voted));
-      const options = {
-        method: 'POST',
-        body: JSON.stringify(voteData),
-        headers: {'Content-Type': 'application/json'},
-      };
-      fetch(url).then((res) => res.json());
+      // sessionStorage.setItem('voted', JSON.stringify(!voted));
     }
+
     writePollResults();
   };
 
