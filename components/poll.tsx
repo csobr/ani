@@ -25,28 +25,16 @@ const Poll: React.FC<Props> = () => {
     }
 
     const getPollResults = db.ref('poll/');
-    getPollResults.on('value', (snapshot) => {
-      if (snapshot.exists()) {
-        const data = snapshot.val();
-        setVoteData(data.voteData);
-        setTotalVotes(data.totalVotes);
-      } else {
-        const fetchPollData = async () => {
-          const res = await fetch(url);
-          const pollData = await res.json();
-
-          return pollData;
-        };
-        fetchPollData().then((data) => {
-          setVoteData(data);
-          let sum = 0;
-          data.forEach((obj) => {
-            sum += obj.votes;
-          });
-          setTotalVotes(sum);
-        });
-      }
-    });
+    getPollResults
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setVoteData(data.voteData);
+          setTotalVotes(data.totalVotes);
+        }
+      })
+      .catch((error) => console.log('No available data', error));
   }, []);
 
   const writePollResults = () => {
@@ -64,7 +52,6 @@ const Poll: React.FC<Props> = () => {
       setVoted(!voted);
       sessionStorage.setItem('voted', JSON.stringify(!voted));
     }
-
     writePollResults();
   };
 

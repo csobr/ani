@@ -2,16 +2,15 @@ import React from 'react';
 
 type Props = {
   value: number;
-  max: number;
   question: string;
 };
 
-const ProgressBar = ({value, max, question}: Props) => {
-  max = 100;
+const ProgressBar = ({value, question}: Props) => {
+  const max = 100;
 
   return (
     <div className="progress-bar">
-      <progress value={value} max={max} />
+      <progress value={value || 0} max={max} />
       <span>
         {question}
         {'\n'}
