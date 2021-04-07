@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import ProgressBar from './ProgressBar';
 import firebase from '../database/Firebase';
+import ProgressBar from './ProgressBar';
+import Loading from './Loading';
 
 type Props = {
   a: string;
@@ -12,13 +13,18 @@ const Poll: React.FC<Props> = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
-  const url = 'http:///localhost:3000/api/pollApi';
 
+  const url = 'http:///localhost:3000/api/pollApi';
   const db = firebase.database();
 
   useEffect(() => {
-    const getPollResults = db.ref('poll/');
+    const didVote = sessionStorage.getItem('voted');
 
+    if (didVote != null) {
+      setVoted(JSON.parse(didVote));
+    }
+
+    const getPollResults = db.ref('poll/');
     getPollResults.on('value', (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
@@ -43,12 +49,12 @@ const Poll: React.FC<Props> = () => {
     });
   }, []);
 
-  function writePollResults() {
+  const writePollResults = () => {
     db.ref('poll/').update({
       totalVotes: totalVotes + 1,
       voteData: voteData,
     });
-  }
+  };
   const submitVote = (e) => {
     if (!voted) {
       const voteSelected = e.target.dataset.id;
@@ -56,11 +62,13 @@ const Poll: React.FC<Props> = () => {
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
       setVoted(!voted);
-      // sessionStorage.setItem('voted', JSON.stringify(!voted));
+      sessionStorage.setItem('voted', JSON.stringify(!voted));
     }
 
     writePollResults();
   };
+
+  if (!voteData) return <Loading show={true} />;
 
   let pollOptions;
   if (voteData) {
