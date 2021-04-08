@@ -4,3 +4,5 @@ node_modules
 prismic-configuration.ts
 Firebase.ts
 .env
+.env.local
+.env.development

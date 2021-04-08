@@ -14,7 +14,6 @@ const Poll: React.FC<Props> = () => {
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
 
-  const url = 'http:///localhost:3000/api/pollApi';
   const db = firebase.database();
 
   useEffect(() => {
@@ -86,6 +85,7 @@ const Poll: React.FC<Props> = () => {
 
   return (
     <div className="poll">
+      <h3>När försökte du sist imponera på för dina kompisar?</h3>
       <div className="poll-container">{voted ? results : pollOptions}</div>
       <br />
       <p>Antal röster: {totalVotes}</p>
