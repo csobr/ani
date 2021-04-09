@@ -100,7 +100,8 @@ const Home = ({content}: Props) => {
           <a onClick={() => setOpen(!open)}>Om</a>
           {open && <section ref={ref} className="overlay" />}
         </div>
-      </nav>{' '}
+      </nav>
+
       <SideMenu open={open} closed={() => setOpen(!open)} />
       <Spacer size={1} />
       <FirstItem content={content} />

@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Loading: React.FC = ({}) => {
-  const [loading, setLoading] = React.useState(false);
-  return <>{loading ? <div>Laoding..</div> : <h1></h1>}</>;
+type Props = {
+  show: boolean;
 };
+const Loading = ({show}: Props) => {
+  const [loading, setLoading] = React.useState(show);
+  return <>{loading ? <div>Loading..</div> : null}</>;
+};
+
+export default Loading;

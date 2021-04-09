@@ -4,6 +4,7 @@ import Border from '@components/Border';
 import Callout from '@components/Callout';
 import Image from '@components/Image';
 import Poll from '@components/Poll';
+import Spacer from '@components/Spacer';
 
 type Props = {
   content: any;
@@ -21,17 +22,9 @@ const SecondItem = ({content, getRef}: Props) => {
           <p>{RichText.asText(content.data.content)}</p>
           <Image image={content.data.image.url} alt={content.data.image.alt} size={340} />
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <h3>När försökte du sist imponera på för dina kompisar?</h3>
-        <br />
+        <Spacer size={5} />
         <Poll a={'idag'} b={'ig'} c={'minns inte'} />
-        <br />
-        <br />
-        <br />
-        <br />
+        <Spacer size={5} />
         <Callout
           text="Hjärnan förändras beroende på vad du tränar på."
           backgroundColor={'#f1d02c'}

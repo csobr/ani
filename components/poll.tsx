@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import firebase from '../database/Firebase';
 import ProgressBar from './ProgressBar';
+import Loading from './Loading';
 
 type Props = {
   a: string;
@@ -11,34 +13,35 @@ const Poll: React.FC<Props> = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
-  const url = 'http:///localhost:3000/api/pollApi';
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setVoteData(data);
-        let sum = 0;
-        data.forEach((obj) => {
-          sum += obj.votes;
-        });
 
-        setTotalVotes(sum);
-        // testing
-        const getTotalVotes = sessionStorage.getItem('totalVotes');
-        if (getTotalVotes) {
-          setTotalVotes(JSON.parse(getTotalVotes));
+  const db = firebase.database();
+
+  useEffect(() => {
+    const didVote = sessionStorage.getItem('voted');
+
+    if (didVote != null) {
+      setVoted(JSON.parse(didVote));
+    }
+
+    const getPollResults = db.ref('poll/');
+    getPollResults
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setVoteData(data.voteData);
+          setTotalVotes(data.totalVotes);
         }
-        let getVoteData = sessionStorage.getItem('voteData');
-        if (getVoteData) {
-          setVoteData(JSON.parse(getVoteData));
-        }
-        let didVote = sessionStorage.getItem('voted');
-        if (didVote) {
-          setVoted(JSON.parse(didVote));
-        }
-      });
+      })
+      .catch((error) => console.log('No available data', error));
   }, []);
 
+  const writePollResults = () => {
+    db.ref('poll/').update({
+      totalVotes: totalVotes + 1,
+      voteData: voteData,
+    });
+  };
   const submitVote = (e) => {
     if (!voted) {
       const voteSelected = e.target.dataset.id;
@@ -46,19 +49,12 @@ const Poll: React.FC<Props> = () => {
       voteData[voteSelected].votes = voteCurrent + 1;
       setTotalVotes(totalVotes + 1);
       setVoted(!voted);
-      sessionStorage.setItem('totalVotes', JSON.stringify(totalVotes + 1));
-      sessionStorage.setItem('voteData', JSON.stringify(voteData));
       sessionStorage.setItem('voted', JSON.stringify(!voted));
-
-      const options = {
-        method: 'POST',
-        body: JSON.stringify(voteData),
-        headers: {'Content-Type': 'application/json'},
-      };
-
-      fetch(url).then((res) => res.json());
     }
+    writePollResults();
   };
+
+  if (!voteData) return <Loading show={true} />;
 
   let pollOptions;
   if (voteData) {
@@ -89,6 +85,7 @@ const Poll: React.FC<Props> = () => {
 
   return (
     <div className="poll">
+      <h3>När försökte du sist imponera på för dina kompisar?</h3>
       <div className="poll-container">{voted ? results : pollOptions}</div>
       <br />
       <p>Antal röster: {totalVotes}</p>
