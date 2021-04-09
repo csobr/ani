@@ -3,3 +3,4 @@ node_modules
 .next
 prismic-configuration.ts
 .env
+.env.local
