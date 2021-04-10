@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 let config = {
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
   databaseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
   projectId: process.env.PROJECT_ID,
