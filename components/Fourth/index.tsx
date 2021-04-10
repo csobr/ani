@@ -1,8 +1,8 @@
 import React from 'react';
-import Border from '@components/Border';
-import Image from '@components/Image';
+import Border from '@components/Border/Border';
+import Image from '@components/Image/Image';
 import {RichText} from 'prismic-reactjs';
-import Callout from '@components/Callout';
+import Callout from '@components/Callout/Callout';
 
 type Props = {
   content: string;

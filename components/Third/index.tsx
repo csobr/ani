@@ -1,5 +1,5 @@
 import React from 'react';
-import Border from '@components/Border';
+import Border from '@components/Border/Border';
 import {RichText} from 'prismic-reactjs';
 
 type Props = {

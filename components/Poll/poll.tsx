@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import firebase from '../database/Firebase';
-import ProgressBar from './ProgressBar';
-import Loading from './Loading';
+import firebase from '../../db/Firebase';
+import ProgressBar from '../ProgressBar/ProgressBar';
+import Loading from '../Loader/Loading';
 
 type Props = {
   a: string;

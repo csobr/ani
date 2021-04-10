@@ -10,11 +10,11 @@ import FirstItem from '@components/First';
 import SecondItem from '@components/Second/index';
 import ThirdView from '@components/Third';
 import FourthView from '@components/Fourth/index';
-import Highlight from '@components/Highlight';
-import Footer from '@components/Footer';
-import SideMenu from '@components/SideMenu';
-import Spacer from '@components/Spacer';
-import DarkModeToggle from '@components/DarkModeToggle';
+import Highlight from '@components/Callout/Highlight';
+import Footer from '@components/Footer/Footer';
+import SideMenu from '@components/SideMenu/SideMenu';
+import Spacer from '@components/Spacer/Spacer';
+import DarkModeToggle from '@components/Toggle/DarkModeToggle';
 
 type Props = {
   content: any;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Spacer from './Spacer';
+import Spacer from '../Spacer/Spacer';
 
 interface Props {
   open: boolean;
