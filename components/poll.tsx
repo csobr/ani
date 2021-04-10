@@ -17,6 +17,15 @@ const Poll: React.FC<Props> = () => {
   const db = firebase.database();
 
   useEffect(() => {
+    firebase
+      .auth()
+      .signInAnonymously()
+      .then(() => {
+        console.log('user', firebase.auth().currentUser.uid);
+      })
+      .catch((error) => {
+        console.log('error', error.code, error.message);
+      });
     const didVote = sessionStorage.getItem('voted');
 
     if (didVote != null) {
