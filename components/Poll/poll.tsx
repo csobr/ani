@@ -8,15 +8,33 @@ type Props = {
   b: string;
   c: string;
 };
+const db = firebase.database();
+export const getPollResults = (setVoteData, setTotalVotes) => {
+  db.ref('poll/')
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        setVoteData(data.voteData);
+        setTotalVotes(data.totalVotes);
+      }
+    })
+    .catch((error) => console.log('No available data', error));
+};
+
+export const writePollResults = (totalVotes, voteData) => {
+  db.ref('poll/').update({
+    totalVotes: totalVotes + 1,
+    voteData: voteData,
+  });
+};
 
 const Poll: React.FC<Props> = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
 
-  const db = firebase.database();
-
-  useEffect(() => {
+  const signInAnon = () => {
     firebase
       .auth()
       .signInAnonymously()
@@ -26,31 +44,18 @@ const Poll: React.FC<Props> = () => {
       .catch((error) => {
         console.log('error', error.code, error.message);
       });
-    const didVote = sessionStorage.getItem('voted');
+  };
 
+  useEffect(() => {
+    signInAnon();
+    getPollResults(setVoteData, setTotalVotes);
+
+    const didVote = sessionStorage.getItem('voted');
     if (didVote != null) {
       setVoted(JSON.parse(didVote));
     }
-
-    const getPollResults = db.ref('poll/');
-    getPollResults
-      .get()
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const data = snapshot.val();
-          setVoteData(data.voteData);
-          setTotalVotes(data.totalVotes);
-        }
-      })
-      .catch((error) => console.log('No available data', error));
   }, []);
 
-  const writePollResults = () => {
-    db.ref('poll/').update({
-      totalVotes: totalVotes + 1,
-      voteData: voteData,
-    });
-  };
   const submitVote = (e) => {
     if (!voted) {
       const voteSelected = e.target.dataset.id;
@@ -60,7 +65,7 @@ const Poll: React.FC<Props> = () => {
       setVoted(!voted);
       sessionStorage.setItem('voted', JSON.stringify(!voted));
     }
-    writePollResults();
+    writePollResults(totalVotes, voteData);
   };
 
   if (!voteData) return <Loading show={true} />;
