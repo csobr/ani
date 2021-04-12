@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import firebase from '../../db/Firebase';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Loading from '../Loader/Loading';
+import Error from '../Error/Error';
 
 type Props = {
   a: string;
@@ -9,7 +10,7 @@ type Props = {
   c: string;
 };
 const db = firebase.database();
-export const getPollResults = (setVoteData, setTotalVotes) => {
+export const getPollResults = (setVoteData, setTotalVotes, setLoading, setError) => {
   db.ref('poll/')
     .get()
     .then((snapshot) => {
@@ -17,9 +18,13 @@ export const getPollResults = (setVoteData, setTotalVotes) => {
         const data = snapshot.val();
         setVoteData(data.voteData);
         setTotalVotes(data.totalVotes);
+        setLoading(false);
       }
     })
-    .catch((error) => console.log('No available data', error));
+    .catch((error) => {
+      setError(true);
+      console.log('No available data', error);
+    });
 };
 
 export const writePollResults = (totalVotes, voteData) => {
@@ -33,6 +38,8 @@ const Poll: React.FC<Props> = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const signInAnon = () => {
     firebase
@@ -42,13 +49,13 @@ const Poll: React.FC<Props> = () => {
         console.log('user', firebase.auth().currentUser.uid);
       })
       .catch((error) => {
-        console.log('error', error.code, error.message);
+        console.log('<<<', error.code, error.message);
       });
   };
 
   useEffect(() => {
     signInAnon();
-    getPollResults(setVoteData, setTotalVotes);
+    getPollResults(setVoteData, setTotalVotes, setLoading, setError);
 
     const didVote = sessionStorage.getItem('voted');
     if (didVote != null) {
@@ -67,8 +74,9 @@ const Poll: React.FC<Props> = () => {
     }
     writePollResults(totalVotes, voteData);
   };
+  if (loading) return <Loading />;
+  if (error) return <Error />;
 
-  if (!voteData) return <Loading show={true} />;
   let pollOptions;
   if (voteData) {
     pollOptions = voteData.map((item) => {
