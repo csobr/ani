@@ -69,7 +69,6 @@ const Poll: React.FC<Props> = () => {
   };
 
   if (!voteData) return <Loading show={true} />;
-
   let pollOptions;
   if (voteData) {
     pollOptions = voteData.map((item) => {
@@ -86,14 +85,8 @@ const Poll: React.FC<Props> = () => {
   let results;
   if (voteData) {
     results = voteData.map((item) => {
-      return (
-        <ProgressBar
-          key={item.id}
-          value={Math.round(100 / totalVotes) * item.votes}
-          data-id={item.id}
-          question={item.option}
-        />
-      );
+      let rounded = (100 / totalVotes) * item.votes;
+      return <ProgressBar key={item.id} value={rounded.toFixed(1)} data-id={item.id} question={item.option} />;
     });
   }
 

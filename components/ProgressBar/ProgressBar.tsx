@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  value: number;
+  value: any;
   question: string;
 };
 
