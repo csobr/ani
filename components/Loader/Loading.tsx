@@ -3,8 +3,8 @@ import React from 'react';
 type Props = {
   show: boolean;
 };
-const Loading = ({show}: Props) => {
-  const [loading, setLoading] = React.useState(show);
+const Loading = () => {
+  const [loading, setLoading] = React.useState(true);
   return <>{loading ? <div>Loading..</div> : null}</>;
 };
 
