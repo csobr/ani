@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 const Error = () => {
   const [error, setError] = useState(true);
-  if (error) return <div>Something went wrong..</div>;
+  if (error) return <div className="error">Hoppsan, något gick fel..</div>;
   return null;
 };
 
