@@ -15,6 +15,7 @@ import Footer from '@components/Footer/Footer';
 import SideMenu from '@components/SideMenu/SideMenu';
 import Spacer from '@components/Spacer/Spacer';
 import DarkModeToggle from '@components/Toggle/DarkModeToggle';
+import {COLORS} from 'constants/Colors';
 
 type Props = {
   content: any;
@@ -52,28 +53,50 @@ const Home = ({content}: Props) => {
     const partThree = partThreeRef.current;
     const partFour = partFourRef.current;
 
-    gsap.fromTo(
-      partOne,
-      {autoAlpha: 0, yPercent: 0},
-      {
-        autoAlpha: 1,
-        yPercent: -10,
-        scrollTrigger: {
-          trigger: partOne,
-          start: 'top center',
-          end: 'center bottom',
-        },
-      }
-    );
-    tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
-      .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
-      .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30});
+    ScrollTrigger.matchMedia({
+      '(max-width: 480px)': function () {
+        gsap.fromTo(
+          partOne,
+          {autoAlpha: 0, yPercent: 0},
+          {
+            autoAlpha: 1,
+            yPercent: -1,
+            scrollTrigger: {
+              trigger: partOne,
+              start: 'top center',
+              end: 'center bottom',
+            },
+          }
+        );
+        tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3})
+          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5})
+          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5});
+      },
+      '(min-width: 490px)': function () {
+        gsap.fromTo(
+          partOne,
+          {autoAlpha: 0, yPercent: 0},
+          {
+            autoAlpha: 1,
+            yPercent: -10,
+            scrollTrigger: {
+              trigger: partOne,
+              start: 'top center',
+              end: 'center bottom',
+            },
+          }
+        );
 
-    gsap.set(backgroundColorRef.current, {borderColor: '#000320'});
+        tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
+          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30})
+          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30});
+      },
+    });
+    gsap.set(backgroundColorRef.current, {borderColor: COLORS.background.light});
 
     const scrollColorElement = document.querySelectorAll('[data-scrollcolor]');
     scrollColorElement.forEach((colorSection, i) => {
-      const previousColor = i === 0 ? '#000320' : scrollColorElement[i - 1].dataset.scrollcolor;
+      const previousColor = i === 0 ? COLORS.background.light : scrollColorElement[i - 1].dataset.scrollcolor;
       ScrollTrigger.create({
         trigger: colorSection,
         start: 'center bottom',
