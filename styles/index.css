@@ -323,6 +323,33 @@ progress::-moz-progress-bar {
   stroke-dasharray: 3, 7.5;
   fill: none;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+.loader > .shapes {
+  top: unset;
+  width: 5rem;
+  grid-auto-rows: 3rem;
+  grid-template-columns: repeat(2, minmax(1rem, 1fr));
+}
+.loader .rectangle {
+  margin: 0;
+  width: 1rem;
+  height: 2rem;
+  background-color: var(--green);
+  animation: rotation 1s infinite linear;
+}
+
+.loader .triangel {
+  margin: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 2rem solid var(--pink);
+  animation: rotationX 1s infinite;
+}
 footer {
   display: flex;
   flex-direction: 'row';
@@ -335,12 +362,28 @@ footer p {
   padding-right: 0.5rem;
   font-size: 1.5rem;
 }
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotationX {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotateY(150deg);
+  }
+}
 
 /* Desktop styles */
 
 @media screen and (min-width: 34rem) {
   main {
-    border: 2rem solid;
+    border: 1rem solid;
   }
   .side-menu {
     width: 30%;

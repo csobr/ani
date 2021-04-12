@@ -5,7 +5,16 @@ type Props = {
 };
 const Loading = () => {
   const [loading, setLoading] = React.useState(true);
-  return <>{loading ? <div>Loading..</div> : null}</>;
+  return (
+    <div className="loader">
+      {loading ? (
+        <div className="shapes">
+          <div className="rectangle" />
+          <div className="triangel" />
+        </div>
+      ) : null}
+    </div>
+  );
 };
 
 export default Loading;
