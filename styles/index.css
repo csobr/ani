@@ -118,27 +118,34 @@ nav p {
   line-height: 4rem;
   font-weight: 300;
 }
-
+/* first view */
+.first-view {
+  width: 100vw;
+}
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
   position: relative;
+  margin: 0 auto;
+  width: 90vw;
 }
 h1 {
   font-size: 7.8rem;
   text-transform: uppercase;
   white-space: pre-wrap;
   font-weight: 700;
+  line-height: 10rem;
 }
 .shapes {
   display: grid;
-  grid-template-columns: repeat(2, minmax(15rem, 3fr));
-  grid-auto-rows: 18rem;
+  grid-template-columns: repeat(2, minmax(16rem, 3fr));
+  grid-auto-rows: 16rem;
   z-index: 0;
   position: absolute;
   top: 12rem;
+  justify-items: center;
 }
 .rectangle {
   margin-left: 1rem;
@@ -392,7 +399,7 @@ footer p {
   .first-view {
     display: grid;
     padding-top: 4rem;
-    height: 90vh;
+    height: 90vw;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     width: 90%;
     margin: 0 auto;
@@ -400,6 +407,7 @@ footer p {
   .header {
     width: 40rem;
     height: 55rem;
+    margin: 0;
   }
   h1 {
     font-size: 12rem;
