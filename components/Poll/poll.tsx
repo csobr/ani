@@ -100,7 +100,8 @@ const Poll: React.FC<Props> = () => {
 
   return (
     <div className="poll">
-      <h3>När försökte du sist imponera på för dina kompisar?</h3>
+      <h3>Lorem ipsum dolor sit amet, consectetur?</h3>
+      <br />
       <div className="poll-container">{voted ? results : pollOptions}</div>
       <br />
       <p>Antal röster: {totalVotes}</p>

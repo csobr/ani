@@ -11,7 +11,7 @@ const Highlight = ({content, header, getRef}: Props) => (
     <div className="star-container">
       <div className="star" />
     </div>
-    <h4>{header}</h4>
+    <h3>{header}</h3>
     <br />
     <p>{RichText.asText(content.data.content)}</p>
     <div className="star-container">

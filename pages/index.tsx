@@ -60,7 +60,7 @@ const Home = ({content}: Props) => {
           {autoAlpha: 0, yPercent: 0},
           {
             autoAlpha: 1,
-            yPercent: -1,
+            yPercent: -2,
             scrollTrigger: {
               trigger: partOne,
               start: 'top center',
@@ -68,9 +68,9 @@ const Home = ({content}: Props) => {
             },
           }
         );
-        tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3})
-          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3})
-          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3});
+        tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5})
+          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -10})
+          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -10});
       },
       '(min-width: 480px)': function () {
         gsap.fromTo(
