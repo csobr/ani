@@ -72,7 +72,7 @@ const Home = ({content}: Props) => {
           .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5})
           .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5});
       },
-      '(min-width: 490px)': function () {
+      '(min-width: 480px)': function () {
         gsap.fromTo(
           partOne,
           {autoAlpha: 0, yPercent: 0},
