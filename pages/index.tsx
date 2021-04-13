@@ -69,8 +69,8 @@ const Home = ({content}: Props) => {
           }
         );
         tl.fromTo(partTwo, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3})
-          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5})
-          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -5});
+          .fromTo(partThree, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3})
+          .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -3});
       },
       '(min-width: 480px)': function () {
         gsap.fromTo(
@@ -92,6 +92,7 @@ const Home = ({content}: Props) => {
           .fromTo(partFour, {autoAlpha: 0, yPercent: 0}, {autoAlpha: 1, yPercent: -30});
       },
     });
+
     gsap.set(backgroundColorRef.current, {borderColor: COLORS.background.light});
 
     const scrollColorElement = document.querySelectorAll('[data-scrollcolor]');

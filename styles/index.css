@@ -40,7 +40,7 @@ body {
 main {
   overflow-x: hidden;
   position: relative;
-  border: 1rem solid;
+  border: 0.5rem solid;
   scrollbar-width: none;
 }
 nav {
