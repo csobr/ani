@@ -14,7 +14,6 @@ type Props = {
 
 const SecondItem = ({content, getRef}: Props) => {
   const {themeMode} = useContext(ThemeContext);
-  if (!themeMode) return null;
 
   return (
     <div ref={getRef} className="second-view" data-scrollcolor="#eb483d">
@@ -25,7 +24,6 @@ const SecondItem = ({content, getRef}: Props) => {
         <br />
         <div className="description">
           <p>{RichText.asText(content.data.content)}</p>
-
           <Image image={themeMode === 'dark' ? 'dopamin_light.png' : '/dopamin_dark.png'} alt={'dopamin'} size={340} />
         </div>
         <Spacer size={5} />
