@@ -46,8 +46,6 @@ const Home = ({content}: Props) => {
   gsap.defaults({ease: 'none'});
 
   useEffect(() => {
-    if (!process.browser) return;
-
     const partOne = partOneRef.current;
     const partTwo = partTwoRef.current;
     const partThree = partThreeRef.current;
