@@ -1,10 +1,7 @@
 import React from 'react';
 
-type Props = {
-  show: boolean;
-};
 const Loading = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<boolean>(true);
   return (
     <div className="loader">
       {loading ? (

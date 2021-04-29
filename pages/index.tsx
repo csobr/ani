@@ -4,7 +4,7 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 
 import {Client} from '../prismic-configuration';
-import ClickOutsideRef from '../hooks/ClickedOutside';
+import ClickOutsideRef from '../Hooks/ClickedOutside';
 
 import FirstItem from '@components/First';
 import SecondItem from '@components/Second/index';
@@ -24,7 +24,7 @@ type Props = {
 const Home = ({content}: Props) => {
   const header = 'Sömn';
   const [open, setOpen] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   ClickOutsideRef(ref, () => setOpen(false));
   gsap.registerPlugin(ScrollTrigger);

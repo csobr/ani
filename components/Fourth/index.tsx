@@ -6,7 +6,7 @@ import Callout from '@components/Callout/Callout';
 
 type Props = {
   content: string;
-  getRef: any;
+  getRef: string;
 };
 
 const FourthView = ({content, getRef}: Props) => (
