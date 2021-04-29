@@ -1,11 +1,12 @@
 import React from 'react';
 
 const Footer = () => {
-  const getYear = () => new Date().getFullYear();
+  const getYear: Date = new Date();
+
   return (
     <footer>
       <p>ani</p>
-      {getYear()}
+      {getYear.getFullYear()}
     </footer>
   );
 };

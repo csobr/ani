@@ -1,9 +1,9 @@
 import React from 'react';
 
-type Color = {
+type ColorProp = {
   color: string;
 };
-const Border = ({color}: Color) => {
+const Border = ({color}: ColorProp) => {
   return <div className="border" style={{backgroundColor: color}} />;
 };
 export default Border;

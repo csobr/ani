@@ -1,9 +1,6 @@
 import React from 'react';
 
-type Props = {
-  content: any;
-};
-const FirstItem = ({content}: Props) => {
+const FirstView = () => {
   return (
     <section className="first-view">
       <div className="header">
@@ -27,4 +24,4 @@ const FirstItem = ({content}: Props) => {
   );
 };
 
-export default FirstItem;
+export default FirstView;
