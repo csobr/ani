@@ -19,9 +19,10 @@ import {COLORS} from 'constants/Colors';
 
 type Props = {
   content: any;
+  dataset: HTMLElement;
 };
 
-const Home = ({content}: Props) => {
+const Home = ({content, dataset}: Props) => {
   const header = 'Sömn';
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -94,13 +95,19 @@ const Home = ({content}: Props) => {
     gsap.set(backgroundColorRef.current, {borderColor: COLORS.background.light});
 
     const scrollColorElement = document.querySelectorAll('[data-scrollcolor]');
+    const scrollColorDiv = scrollColorElement instanceof HTMLDivElement;
     scrollColorElement.forEach((colorSection, i) => {
-      const previousColor = i === 0 ? COLORS.background.light : scrollColorElement[i - 1].dataset.scrollcolor;
+      const previousColor =
+        i === 0 ? COLORS.background.light : scrollColorDiv && scrollColorDiv[i - 1].dataset.scrollcolor;
       ScrollTrigger.create({
         trigger: colorSection,
         start: 'center bottom',
         onEnter: () =>
-          gsap.to('main', {borderColor: colorSection.dataset.scrollcolor, overwrite: 'auto', autoAlpha: 1}),
+          gsap.to('main', {
+            borderColor: (colorSection as HTMLElement).dataset.scrollcolor,
+            overwrite: 'auto',
+            autoAlpha: 1,
+          }),
         onLeaveBack: () => gsap.to('main', {borderColor: previousColor, overwrite: 'auto'}),
       });
     });
@@ -126,7 +133,7 @@ const Home = ({content}: Props) => {
 
       <SideMenu open={open} closed={() => setOpen(!open)} />
       <Spacer size={1} />
-      <FirstItem content={content} />
+      <FirstItem />
       <Spacer size={5} />
       <SecondItem getRef={partOneRef} content={content} />
       <Spacer size={5} />
