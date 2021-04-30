@@ -22,7 +22,7 @@ type Props = {
   dataset: HTMLElement;
 };
 
-const Home = ({content, dataset}: Props) => {
+const Home = ({content}: Props) => {
   const header = 'Sömn';
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
