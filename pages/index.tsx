@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import Head from 'next/head';
 import {GetServerSideProps} from 'next';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
@@ -121,29 +122,34 @@ const Home = ({content}: Props) => {
   }, []);
 
   return (
-    <main className="main" ref={backgroundColorRef}>
-      <nav>
-        <p className="logo">ani</p>
-        <div className="nav-align-left">
-          <DarkModeToggle />
-          <a onClick={() => setOpen(!open)}>Om</a>
-          {open && <section ref={ref} className="overlay" />}
-        </div>
-      </nav>
+    <>
+      <Head>
+        <title>ani</title>
+      </Head>
+      <main className="main" ref={backgroundColorRef}>
+        <nav>
+          <p className="logo">ani</p>
+          <div className="nav-align-left">
+            <DarkModeToggle />
+            <a onClick={() => setOpen(!open)}>Om</a>
+            {open && <section ref={ref} className="overlay" />}
+          </div>
+        </nav>
 
-      <SideMenu open={open} closed={() => setOpen(!open)} />
-      <Spacer size={1} />
-      <FirstItem />
-      <Spacer size={5} />
-      <SecondItem getRef={partOneRef} content={content} />
-      <Spacer size={5} />
-      <ThirdView getRef={partTwoRef} content={content} />
-      <Spacer size={5} />
-      <FourthView getRef={partThreeRef} content={content} />
-      <Spacer size={5} />
-      <Highlight getRef={partFourRef} header={header} content={content} />
-      <Footer />
-    </main>
+        <SideMenu open={open} closed={() => setOpen(!open)} />
+        <Spacer size={1} />
+        <FirstItem />
+        <Spacer size={5} />
+        <SecondItem getRef={partOneRef} content={content} />
+        <Spacer size={5} />
+        <ThirdView getRef={partTwoRef} content={content} />
+        <Spacer size={5} />
+        <FourthView getRef={partThreeRef} content={content} />
+        <Spacer size={5} />
+        <Highlight getRef={partFourRef} header={header} content={content} />
+        <Footer />
+      </main>
+    </>
   );
 };
 
