@@ -4,7 +4,7 @@ import {COLORS} from 'constants/Colors';
 export const ThemeContext = createContext(null);
 
 export const ThemeProvider = ({children}) => {
-  const [themeMode, rawSetThemeMode] = useState(undefined);
+  const [themeMode, rawSetThemeMode] = useState<string>(undefined);
   useEffect(() => {
     const root = window.document.documentElement;
     const initialThemeValue = root.style.getPropertyValue('--initial-theme-mode');

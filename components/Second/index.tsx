@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, useContext} from 'react';
+import React, {useContext} from 'react';
 import {RichText} from 'prismic-reactjs';
 import Border from '@components/Border/Border';
 import Callout from '@components/Callout/Callout';
