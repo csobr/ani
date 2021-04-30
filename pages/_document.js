@@ -5,7 +5,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <html lang="sv" />
+          <title>ani</title>
+        </Head>
         <body>
           <MagicScriptTag />
           <Main />

@@ -45,9 +45,6 @@ const Poll: React.FC<Props> = () => {
     firebase
       .auth()
       .signInAnonymously()
-      .then(() => {
-        console.log('user', firebase.auth().currentUser.uid);
-      })
       .catch((error) => {
         console.log('<<<', error.code, error.message);
       });
@@ -81,11 +78,13 @@ const Poll: React.FC<Props> = () => {
   if (voteData) {
     pollOptions = voteData.map((item) => {
       return (
-        <li key={item.id}>
-          <button onClick={submitVote} data-id={item.id}>
-            {item.option}
-          </button>
-        </li>
+        <ul key={item.id}>
+          <li>
+            <button onClick={submitVote} data-id={item.id}>
+              {item.option}
+            </button>
+          </li>
+        </ul>
       );
     });
   }

@@ -8,6 +8,7 @@ const DarkModeToggle = () => {
     <label htmlFor="checkbox" className="custom-checkbox">
       <input
         type="checkbox"
+        aria-label="click"
         checked={themeMode === 'dark'}
         onChange={(e) => {
           setThemeMode(e.target.checked ? 'dark' : 'light');
