@@ -42,12 +42,11 @@ const Poll: React.FC<Props> = () => {
   const [error, setError] = useState(false);
 
   const signInAnon = () => {
-    firebase
-      .auth()
-      .signInAnonymously()
-      .catch((error) => {
-        console.log('<<<', error.code, error.message);
-      });
+    try {
+      firebase.auth().signInAnonymously();
+    } catch (error) {
+      console.log('<<<', error.code, error.message);
+    }
   };
 
   useEffect(() => {

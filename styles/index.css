@@ -17,11 +17,11 @@
   --pink: #e88fa3;
   --green: #40a857;
   --red: #eb483d;
-  --night: #000320;
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   font-family: 'Open Sans', sans-serif;
