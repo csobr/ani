@@ -131,7 +131,7 @@ const Home = ({content}: Props) => {
           <p className="logo">ani</p>
           <div className="nav-align-left">
             <DarkModeToggle />
-            <a onClick={() => setOpen(!open)}>Om</a>
+            <button onClick={() => setOpen(!open)}>Om</button>
             {open && <section ref={ref} className="overlay" />}
           </div>
         </nav>

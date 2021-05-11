@@ -59,15 +59,18 @@ nav {
   justify-content: flex-end;
   height: 3rem;
 }
-nav a,
+nav button,
 .side-menu a {
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
 }
-nav a {
+nav button {
   margin-left: 3rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--color);
 }
 nav p {
   font-family: 'futura';
@@ -369,6 +372,23 @@ footer {
 footer p {
   padding-right: 0.5rem;
   font-size: 1.5rem;
+}
+
+.error-404 {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4rem;
+  justify-content: center;
+}
+.error-404 a {
+  text-decoration: none;
+  color: var(--background);
+  font-size: 2rem;
+}
+.error-404 a:hover {
+  color: var(--pink);
 }
 @keyframes rotation {
   from {
