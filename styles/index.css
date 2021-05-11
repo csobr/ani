@@ -72,6 +72,7 @@ nav button {
   border: 0;
   color: var(--color);
 }
+
 nav p {
   font-family: 'futura';
   font-weight: bold;
@@ -255,6 +256,9 @@ h1 {
   border-radius: 3rem;
   line-height: 1rem;
 }
+.poll li:hover {
+  border-color: var(--yellow);
+}
 .poll li button {
   color: var(--color);
   padding: 0.3rem;
@@ -265,6 +269,7 @@ h1 {
   font-weight: 700;
   font-size: 1.6rem;
 }
+
 .progress-bar {
   display: flex;
   flex-direction: column;
