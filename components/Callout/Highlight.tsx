@@ -2,7 +2,7 @@ import {RichText} from 'prismic-reactjs';
 import React from 'react';
 
 type Props = {
-  content: string;
+  content: any;
   header: string;
   getRef: any;
 };

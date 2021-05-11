@@ -4,3 +4,5 @@ node_modules
 prismic-configuration.ts
 .env
 .env.local
+.vercel
+components/game/3d/example.tsx

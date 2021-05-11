@@ -5,7 +5,7 @@ import {RichText} from 'prismic-reactjs';
 import Callout from '@components/Callout/Callout';
 
 type Props = {
-  content: string;
+  content: any;
   getRef: any;
 };
 
