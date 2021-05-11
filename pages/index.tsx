@@ -155,8 +155,7 @@ const Home = ({content}: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const client = Client();
-  const content = await client.getSingle('page');
-
+  const content = await client.getSingle('page', undefined);
   return {props: {content}};
 };
 export default Home;
