@@ -190,6 +190,7 @@ h1 {
 
 .description p,
 .app-description {
+  width: 50rem;
   font-weight: 300;
   line-height: 3rem;
   white-space: break-spaces;
