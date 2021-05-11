@@ -5,6 +5,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
+        <Head />
         <Head>
           <html lang="sv" />
           <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon.ico" />
