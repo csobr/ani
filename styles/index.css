@@ -258,7 +258,7 @@ h1 {
   line-height: 1rem;
 }
 .poll li:hover {
-  border-color: var(--yellow);
+  background-color: #40a85786;
 }
 .poll li button {
   color: var(--color);
