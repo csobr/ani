@@ -13,10 +13,7 @@ const SideMenu = ({open, closed}: Props) => {
       <div className="about">
         <h2>Vad är ani?</h2>
 
-        <p>
-          Ipsum perferendis harum quidem exercitationem. Iure sed qui ut laudantium ut quisquam harum. Et itaque qui
-          praesentium. Tempora quibusdam et veniam. Nihil necessitatibus qui minus ipsam cum iste porro.
-        </p>
+        <p>En plats för dig som tonåring att lära dig mer din hjärna.</p>
       </div>
     </div>
   );

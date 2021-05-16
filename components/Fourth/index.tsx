@@ -15,7 +15,6 @@ const FourthView = ({content, getRef}: Props) => (
       <Border color={'#e88fa3'} />
       <br />
       <h2>{RichText.asText(content.data.title)}</h2>
-      <br />
       <div className="description">
         <p>{RichText.asText(content.data.content)}</p>
         <Image image={'/brain.png'} alt={'brain'} size={300} />

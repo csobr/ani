@@ -140,13 +140,13 @@ const Home = ({content}: Props) => {
         <Spacer size={1} />
         <FirstItem />
         <Spacer size={5} />
-        <SecondItem getRef={partOneRef} content={content} />
+        <SecondItem getRef={partOneRef} content={content.results[2]} />
         <Spacer size={5} />
-        <ThirdView getRef={partTwoRef} content={content} />
+        <ThirdView getRef={partTwoRef} content={content.results[1]} />
         <Spacer size={5} />
-        <FourthView getRef={partThreeRef} content={content} />
+        <FourthView getRef={partThreeRef} content={content.results[3]} />
         <Spacer size={5} />
-        <Highlight getRef={partFourRef} header={header} content={content} />
+        <Highlight getRef={partFourRef} header={header} content={content.results[0]} />
         <Footer />
       </main>
     </>
@@ -155,7 +155,9 @@ const Home = ({content}: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const client = Client();
-  const content = await client.getSingle('page', undefined);
+  const content = await client.query('').catch((error) => {
+    console.log('failed to retrive content', error);
+  });
   return {props: {content}};
 };
 export default Home;
