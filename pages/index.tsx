@@ -140,13 +140,13 @@ const Home = ({content}: Props) => {
         <Spacer size={1} />
         <FirstItem />
         <Spacer size={5} />
-        <SecondItem getRef={partOneRef} content={content.results[2]} />
+        <SecondItem getRef={partOneRef} content={content.results[0]} />
         <Spacer size={5} />
         <ThirdView getRef={partTwoRef} content={content.results[1]} />
         <Spacer size={5} />
-        <FourthView getRef={partThreeRef} content={content.results[3]} />
+        <FourthView getRef={partThreeRef} content={content.results[2]} />
         <Spacer size={5} />
-        <Highlight getRef={partFourRef} header={header} content={content.results[0]} />
+        <Highlight getRef={partFourRef} header={header} content={content.results[3]} />
         <Footer />
       </main>
     </>
