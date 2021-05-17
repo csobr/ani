@@ -8,7 +8,7 @@ import {Client} from '../prismic-configuration';
 import ClickOutsideRef from '../Hooks/ClickedOutside';
 
 import FirstItem from '@components/First';
-import SecondItem from '@components/Second/index';
+import SecondView from '@components/Second/index';
 import ThirdView from '@components/Third';
 import FourthView from '@components/Fourth/index';
 import Highlight from '@components/Callout/Highlight';
@@ -19,12 +19,14 @@ import DarkModeToggle from '@components/Toggle/DarkModeToggle';
 import {COLORS} from 'constants/Colors';
 
 type Props = {
-  content: any;
+  kompisar: any;
+  kanslor: any;
+  beloning: any;
+  somn: any;
   dataset: HTMLElement;
 };
 
-const Home = ({content}: Props) => {
-  const header = 'Sömn';
+const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -140,13 +142,13 @@ const Home = ({content}: Props) => {
         <Spacer size={1} />
         <FirstItem />
         <Spacer size={5} />
-        <SecondItem getRef={partOneRef} content={content} />
+        <SecondView getRef={partOneRef} content={kompisar} />
+        <Spacer size={10} />
+        <ThirdView getRef={partTwoRef} content={beloning} />
         <Spacer size={5} />
-        <ThirdView getRef={partTwoRef} content={content} />
+        <FourthView getRef={partThreeRef} content={kanslor} />
         <Spacer size={5} />
-        <FourthView getRef={partThreeRef} content={content} />
-        <Spacer size={5} />
-        <Highlight getRef={partFourRef} header={header} content={content} />
+        <Highlight getRef={partFourRef} content={somn} />
         <Footer />
       </main>
     </>
@@ -155,7 +157,18 @@ const Home = ({content}: Props) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const client = Client();
-  const content = await client.getSingle('page', undefined);
-  return {props: {content}};
+  const kompisar = await client.getByUID('page', 'kompisar', undefined).catch((error) => {
+    console.log('failed to load content', error);
+  });
+  const beloning = await client.getByUID('page', 'beloning', undefined).catch((error) => {
+    console.log('failed to load content', error);
+  });
+  const kanslor = await client.getByUID('page', 'kanslor', undefined).catch((error) => {
+    console.log('failed to load content', error);
+  });
+  const somn = await client.getByUID('page', 'somn', undefined).catch((error) => {
+    console.log('failed to load content', error);
+  });
+  return {props: {kanslor, beloning, kompisar, somn}};
 };
 export default Home;

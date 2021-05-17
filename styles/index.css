@@ -7,7 +7,7 @@
 }
 *:focus {
   outline: 0;
-  color: var(--pink);
+  color: var(--green);
 }
 
 :root {
@@ -60,11 +60,15 @@ nav {
   height: 3rem;
 }
 nav button,
-.side-menu a {
+.side-menu button {
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
+}
+button {
+  border: none;
+  background-color: transparent;
 }
 nav button {
   margin-left: 3rem;
@@ -188,8 +192,7 @@ h1 {
   z-index: 1;
 }
 
-.description p,
-.app-description {
+p {
   font-weight: 300;
   line-height: 3rem;
   white-space: break-spaces;
@@ -207,12 +210,9 @@ h1 {
 }
 
 .highlight {
-  border: 1rem solid var(--color);
-  height: auto;
   padding: 2.5rem;
-  line-height: 2.5rem;
-  font-weight: 300;
 }
+
 .star-container {
   display: flex;
   width: 100%;
@@ -244,6 +244,9 @@ h1 {
 /* poll */
 .poll {
   width: 100%;
+}
+ul {
+  padding: 0;
 }
 .poll p {
   font-weight: 700;
@@ -393,7 +396,7 @@ footer p {
   font-size: 2rem;
 }
 .error-404 a:hover {
-  color: var(--pink);
+  color: var(--green);
 }
 @keyframes rotation {
   from {
@@ -490,20 +493,14 @@ footer p {
   }
   .callout {
     padding: 1rem;
-    width: 50%;
+    width: 60%;
   }
   h4 {
     font-size: 2rem;
   }
   .highlight {
-    padding: 4rem;
+    width: 75%;
     margin: 0 auto;
-    width: 95%;
-  }
-
-  .highlight p {
-    width: 100%;
-    line-height: 2.8rem;
   }
 }
 @media only screen and (max-width: 1024px) {

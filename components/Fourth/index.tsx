@@ -15,7 +15,6 @@ const FourthView = ({content, getRef}: Props) => (
       <Border color={'#e88fa3'} />
       <br />
       <h2>{RichText.asText(content.data.title)}</h2>
-      <br />
       <div className="description">
         <p>{RichText.asText(content.data.content)}</p>
         <Image image={'/brain.png'} alt={'brain'} size={300} />
@@ -23,7 +22,7 @@ const FourthView = ({content, getRef}: Props) => (
       <br />
       <br />
       <Callout
-        text="Hjärnan förändras beroende på vad du tränar på."
+        text={RichText.asText(content.data.body[0].primary.title)}
         backgroundColor={'#000000'}
         borderColor={'#f1d02c'}
         textColor={'#f1d02c'}
