@@ -1,6 +1,8 @@
 import React from 'react';
-import Border from '@components/Border/Border';
 import {RichText} from 'prismic-reactjs';
+
+import Image from 'components/Image/Image';
+import Border from '@components/Border/Border';
 
 type Props = {
   content: any;
@@ -17,6 +19,7 @@ const ThridView = ({content, getRef}: Props) => {
           <br></br>
           <div className="description">
             <p>{RichText.asText(content.data.content)}</p>
+            <Image image={'/brain.png'} alt={'brain'} size={300} />
           </div>
         </div>
         <br />

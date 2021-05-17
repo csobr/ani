@@ -188,8 +188,7 @@ h1 {
   z-index: 1;
 }
 
-.description p,
-.app-description {
+p {
   font-weight: 300;
   line-height: 3rem;
   white-space: break-spaces;
@@ -207,12 +206,9 @@ h1 {
 }
 
 .highlight {
-  border: 1rem solid var(--color);
-  height: auto;
   padding: 2.5rem;
-  line-height: 2.5rem;
-  font-weight: 300;
 }
+
 .star-container {
   display: flex;
   width: 100%;
@@ -496,14 +492,8 @@ footer p {
     font-size: 2rem;
   }
   .highlight {
-    padding: 4rem;
+    width: 75%;
     margin: 0 auto;
-    width: 95%;
-  }
-
-  .highlight p {
-    width: 100%;
-    line-height: 2.8rem;
   }
 }
 @media only screen and (max-width: 1024px) {

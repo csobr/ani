@@ -141,7 +141,7 @@ const Home = ({content}: Props) => {
         <FirstItem />
         <Spacer size={5} />
         <SecondItem getRef={partOneRef} content={content.results[0]} />
-        <Spacer size={5} />
+        <Spacer size={10} />
         <ThirdView getRef={partTwoRef} content={content.results[1]} />
         <Spacer size={5} />
         <FourthView getRef={partThreeRef} content={content.results[2]} />
@@ -156,7 +156,7 @@ const Home = ({content}: Props) => {
 export const getServerSideProps: GetServerSideProps = async () => {
   const client = Client();
   const content = await client.query('').catch((error) => {
-    console.log('failed to retrive content', error);
+    console.log('failed to load content', error);
   });
   return {props: {content}};
 };
