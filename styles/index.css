@@ -241,6 +241,9 @@ p {
 .poll {
   width: 100%;
 }
+ul {
+  padding: 0;
+}
 .poll p {
   font-weight: 700;
 }

@@ -5,16 +5,13 @@ import Callout from '@components/Callout/Callout';
 import Image from '@components/Image/Image';
 import Poll from '@components/Poll/poll';
 import Spacer from '@components/Spacer/Spacer';
-import {ThemeContext} from '../Theme/ThemeContext';
 
 type Props = {
   content: any;
   getRef: any;
 };
 
-const SecondItem = ({content, getRef}: Props) => {
-  const {themeMode} = useContext(ThemeContext);
-
+const SecondView = ({content, getRef}: Props) => {
   return (
     <div ref={getRef} className="second-view" data-scrollcolor="#eb483d">
       <div className="inner">
@@ -24,7 +21,7 @@ const SecondItem = ({content, getRef}: Props) => {
         <br />
         <div className="description">
           <p>{RichText.asText(content.data.content)}</p>
-          <Image image={themeMode === 'dark' ? 'dopamin_light.png' : '/dopamin_dark.png'} alt={'dopamin'} size={340} />
+          <Image image={'./brain.png'} alt={'brain'} size={340} />
         </div>
         <Spacer size={5} />
         <Poll a={'idag'} b={'ig'} c={'minns inte'} />
@@ -40,4 +37,4 @@ const SecondItem = ({content, getRef}: Props) => {
   );
 };
 
-export default SecondItem;
+export default SecondView;

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {RichText} from 'prismic-reactjs';
 
 import Image from 'components/Image/Image';
 import Border from '@components/Border/Border';
+import {ThemeContext} from '../Theme/ThemeContext';
 
 type Props = {
   content: any;
   getRef: any;
 };
 const ThridView = ({content, getRef}: Props) => {
+  const {themeMode} = useContext(ThemeContext);
   return (
     <div className="third-view" data-scrollcolor="#f1d02c">
       <div ref={getRef} className="inner">
@@ -19,7 +21,11 @@ const ThridView = ({content, getRef}: Props) => {
           <br></br>
           <div className="description">
             <p>{RichText.asText(content.data.content)}</p>
-            <Image image={'/brain.png'} alt={'brain'} size={300} />
+            <Image
+              image={themeMode === 'dark' ? 'dopamin_light.png' : '/dopamin_dark.png'}
+              alt={'dopamin'}
+              size={340}
+            />
           </div>
         </div>
         <br />
