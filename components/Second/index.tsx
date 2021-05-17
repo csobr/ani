@@ -27,7 +27,7 @@ const SecondView = ({content, getRef}: Props) => {
         <Poll a={'idag'} b={'ig'} c={'minns inte'} />
         <Spacer size={5} />
         <Callout
-          text="Hjärnan förändras beroende på vad du tränar på."
+          text={RichText.asText(content.data.body[0].primary.title)}
           backgroundColor={'#f1d02c'}
           borderColor={'#000320'}
           textColor={'#000320'}
