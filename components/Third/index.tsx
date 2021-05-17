@@ -18,7 +18,8 @@ const ThridView = ({content, getRef}: Props) => {
         <br />
         <div>
           <h2>{RichText.asText(content.data.title)}</h2>
-          <br></br>
+          <br />
+
           <div className="description">
             <p>{RichText.asText(content.data.content)}</p>
             <Image
