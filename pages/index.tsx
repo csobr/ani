@@ -156,7 +156,13 @@ const Home = ({content}: Props) => {
 export const getServerSideProps: GetServerSideProps = async () => {
   const client = Client();
   const content = await client.getSingle('page');
-
+  if (content) {
+    return {
+      redirect: {
+        destination: '/404.tsx',
+      },
+    };
+  }
   return {props: {content}};
 };
 export default Home;
