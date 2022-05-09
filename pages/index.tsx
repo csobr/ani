@@ -5,6 +5,7 @@ import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 
 import {Client} from '../prismic-configuration';
+import PlausibleProvider from 'next-plausible';
 import ClickOutsideRef from '../Hooks/ClickedOutside';
 
 import FirstItem from '@components/First';
@@ -124,9 +125,9 @@ const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
   }, []);
 
   return (
-    <>
+    <PlausibleProvider domain="ani-brain.com">
       <Head>
-        <title>ani</title>
+        <title>Ani - Min tonårshjärna</title>
       </Head>
       <main className="main" ref={backgroundColorRef}>
         <nav>
@@ -151,7 +152,7 @@ const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
         <Highlight getRef={partFourRef} content={somn} />
         <Footer />
       </main>
-    </>
+    </PlausibleProvider>
   );
 };
 
