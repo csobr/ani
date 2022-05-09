@@ -18,7 +18,7 @@ const FourthView = ({content, getRef}: Props) => (
       <br />
       <div className="description">
         <p>{RichText.asText(content.data.content)}</p>
-        <Image image={'/brain.png'} alt={'brain'} size={300} />
+        <Image image={'/brain_red.png'} alt={'brain'} size={300} />
       </div>
       <br />
       <br />
