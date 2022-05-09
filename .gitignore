@@ -6,3 +6,4 @@ prismic-configuration.ts
 .env.local
 .vercel
 components/game/3d/example.tsx
+poll.json

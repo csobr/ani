@@ -9,6 +9,7 @@ export const ThemeProvider = ({children}) => {
     const root = window.document.documentElement;
     const initialThemeValue = root.style.getPropertyValue('--initial-theme-mode');
     rawSetThemeMode(initialThemeValue);
+    return () => rawSetThemeMode(initialThemeValue);
   }, []);
   const setThemeMode = (newValue) => {
     const root = document.documentElement;
