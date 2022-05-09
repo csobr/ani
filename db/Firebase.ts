@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
+import {initializeApp, FirebaseOptions, getApp} from 'firebase/app';
+import {getAuth} from 'firebase/auth';
+import {getDatabase} from 'firebase/database';
 
 let config = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -12,8 +12,14 @@ let config = {
   appId: process.env.APP_ID,
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(config);
+function createFirebaseApp(config: FirebaseOptions) {
+  try {
+    return getApp();
+  } catch {
+    return initializeApp(config);
+  }
 }
 
-export default firebase;
+const app = createFirebaseApp(config);
+export const auth = getAuth(app);
+export const db = getDatabase(app);

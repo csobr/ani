@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import firebase from '../../db/Firebase';
+import {ref, child, get, update, set} from 'firebase/database';
+import {signInAnonymously} from 'firebase/auth';
+import {db, auth} from '../../db/Firebase';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Loading from '../Loader/Loading';
 import Error from '../Error/Error';
@@ -9,13 +11,15 @@ type Props = {
   b: string;
   c: string;
 };
-const db = firebase.database();
+
 export const getPollResults = (setVoteData, setTotalVotes, setLoading, setError) => {
-  db.ref('poll/')
-    .get()
+  const refDB = ref(db);
+
+  get(child(refDB, 'poll/'))
     .then((snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
+
         setVoteData(data.voteData);
         setTotalVotes(data.totalVotes);
         setLoading(false);
@@ -26,12 +30,8 @@ export const getPollResults = (setVoteData, setTotalVotes, setLoading, setError)
       console.log('No available data', error);
     });
 };
-
 export const writePollResults = (totalVotes, voteData) => {
-  db.ref('poll/').update({
-    totalVotes: totalVotes + 1,
-    voteData: voteData,
-  });
+  update(ref(db, 'poll'), {totalVotes: totalVotes + 1, voteData: voteData});
 };
 
 const Poll: React.FC<Props> = () => {
@@ -43,7 +43,7 @@ const Poll: React.FC<Props> = () => {
 
   const signInAnon = () => {
     try {
-      firebase.auth().signInAnonymously();
+      signInAnonymously(auth);
     } catch (error) {
       console.log('auth failed', error.code, error.message);
     }
@@ -51,12 +51,14 @@ const Poll: React.FC<Props> = () => {
 
   useEffect(() => {
     signInAnon();
-    getPollResults(setVoteData, setTotalVotes, setLoading, setError);
-
     const didVote = sessionStorage.getItem('voted');
     if (didVote != null) {
       setVoted(JSON.parse(didVote));
     }
+    getPollResults(setVoteData, setTotalVotes, setLoading, setError);
+    return () => {
+      getPollResults(setVoteData, setTotalVotes, setLoading, setError);
+    };
   }, []);
 
   const submitVote = (e) => {
@@ -67,9 +69,10 @@ const Poll: React.FC<Props> = () => {
       setTotalVotes(totalVotes + 1);
       setVoted(!voted);
       sessionStorage.setItem('voted', JSON.stringify(!voted));
+      writePollResults(totalVotes, voteData);
     }
-    writePollResults(totalVotes, voteData);
   };
+
   if (loading) return <Loading />;
   if (error) return <Error />;
 
