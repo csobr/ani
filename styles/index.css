@@ -61,7 +61,7 @@ nav {
 }
 nav button,
 .side-menu button {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
@@ -128,22 +128,27 @@ nav p {
 }
 /* first view */
 .first-view {
-  width: 100vw;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 .header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+  margin: 0 auto;
   position: relative;
   margin: 0 auto;
-  width: 90vw;
+  width: 100%;
+}
+.app-description {
+  margin: 0 auto;
 }
 h1 {
-  font-size: 8rem;
+  font-size: 7.2rem;
   text-transform: uppercase;
   white-space: pre-wrap;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 10rem;
 }
 .shapes {
@@ -437,12 +442,14 @@ footer p {
     height: 55rem;
     margin: 0;
   }
+
   h1 {
     font-size: 12rem;
     line-height: 13rem;
     font-weight: 800;
   }
   .app-description {
+    margin: unset;
     width: 50rem;
   }
   .shapes {
@@ -473,7 +480,7 @@ footer p {
   }
   .description {
     display: grid;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .description p {
@@ -482,6 +489,7 @@ footer p {
   }
   .image {
     grid-column: 2/2;
+    align-items: flex-start;
   }
   h3 {
     text-align: center;
