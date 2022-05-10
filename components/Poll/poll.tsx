@@ -1,16 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {ref, child, get, update, set} from 'firebase/database';
+import {ref, child, get, update} from 'firebase/database';
 import {signInAnonymously} from 'firebase/auth';
 import {db, auth} from '../../db/Firebase';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Loading from '../Loader/Loading';
 import Error from '../Error/Error';
-
-type Props = {
-  a: string;
-  b: string;
-  c: string;
-};
 
 export const getPollResults = (setVoteData, setTotalVotes, setLoading, setError) => {
   const refDB = ref(db);
@@ -34,7 +28,7 @@ export const writePollResults = (totalVotes, voteData) => {
   update(ref(db, 'poll'), {totalVotes: totalVotes + 1, voteData: voteData});
 };
 
-const Poll: React.FC<Props> = () => {
+const Poll = () => {
   const [voteData, setVoteData] = useState(null);
   const [totalVotes, setTotalVotes] = useState(0);
   const [voted, setVoted] = useState(false);

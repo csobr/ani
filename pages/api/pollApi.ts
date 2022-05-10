@@ -6,11 +6,7 @@ type Data = {
   option: string;
 };
 
-const pollData = [
-  {id: 0, votes: 0, option: 'Option 1'},
-  {id: 1, votes: 0, option: 'Option 2'},
-  {id: 2, votes: 0, option: 'Option 3'},
-];
+const pollData: Data = {id: 0, votes: 0, option: 'option'};
 export default (req: NextApiRequest, res: NextApiResponse) => {
   res.status(200).json(pollData);
 };

@@ -24,7 +24,7 @@ const SecondView = ({content, getRef}: Props) => {
           <Image image={'./brain.png'} alt={'brain'} size={340} />
         </div>
         <Spacer size={5} />
-        <Poll a={'idag'} b={'ig'} c={'minns inte'} />
+        <Poll />
         <Spacer size={5} />
         <Callout
           text={RichText.asText(content.data.body[0].primary.title)}
