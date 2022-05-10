@@ -127,14 +127,14 @@ const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
   return (
     <PlausibleProvider domain="ani-brain.com">
       <Head>
-        <title>Ani - Min tonårshjärna</title>
+        <title>Ani - The teenage brain</title>
       </Head>
       <main className="main" ref={backgroundColorRef}>
         <nav>
           <p className="logo">ani</p>
           <div className="nav-align-left">
             <DarkModeToggle />
-            <button onClick={() => setOpen(!open)}>Om</button>
+            <button onClick={() => setOpen(!open)}>about</button>
             {open && <section ref={ref} className="overlay" />}
           </div>
         </nav>

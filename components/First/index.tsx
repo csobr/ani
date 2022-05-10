@@ -4,13 +4,13 @@ const FirstView = () => {
   return (
     <section className="first-view">
       <div className="header">
-        <h1>Min tonårs-{'\n'}hjärna</h1>
+        <h1>The teenage{'\n'}brain</h1>
         <br />
         <div className="app-description">
           <p>
-            Under tonårstiden sker det många förändringar i livet. Man kommer in puberteten och kroppen förändras
-            mycket. Även hjärnan utvecklas under den här tiden. Förstå vad som händer i din hjärna med hjälp av
-            forsking.
+            During adolescence, many changes take place in life. As a teenager, you enter puberty and the body changes a
+            lot. The brain also develops during this time. With the help of research, you can better understand what is
+            happening in your brain.
           </p>
         </div>
       </div>

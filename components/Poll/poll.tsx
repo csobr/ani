@@ -95,7 +95,7 @@ const Poll = () => {
 
   return (
     <div className="poll">
-      <h3>När försökte du sist imponera på en kompis?</h3>
+      <h3>How often do you try to impress friends?</h3>
       <br />
       <div className="poll-container">{voted ? results : pollOptions}</div>
       <br />

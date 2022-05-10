@@ -13,9 +13,9 @@ const SideMenu = ({open, closed}: Props) => {
       </button>
       <Spacer size={15} />
       <div className="about">
-        <h2>Vad är ani?</h2>
+        <h2>What's ani?</h2>
 
-        <p>En plats för dig som tonåring att lära dig mer din hjärna.</p>
+        <p>A place for you as a teenager to learn more about your brain.</p>
       </div>
     </div>
   );

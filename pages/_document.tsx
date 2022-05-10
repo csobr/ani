@@ -12,17 +12,16 @@ class MyDocument extends Document {
     return (
       <Html lang="sv">
         <Head>
-          <meta name="title" content="Ani - Min tonårshjärna" />
+          <meta name="title" content="Ani - The teenage brain" />
           <meta name="description" content="" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://ani-brain.com/" />
-          <meta property="og:title" content="Ani - Min tonårshjärna" />
+          <meta property="og:title" content="Ani - The teenage brain" />
           <meta property="og:image" content="https://ani-brain.com/op-image.jpg" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://ani-brain.com/" />
-          <meta property="twitter:title" content="Ani - Min tonårshjärna" />
+          <meta property="twitter:title" content="Ani - The teenage brain" />
           <meta property="twitter:image" content="https://ani-brain.com/op-image.jpg" />
-          <html lang="sv" />
           <link rel="icon" href="favicon.ico" type="image/x-icon" />
           <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
           <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16" />
