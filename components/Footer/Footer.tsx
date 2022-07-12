@@ -5,7 +5,9 @@ const Footer = () => {
 
   return (
     <footer>
-      <p>ani</p>
+      <p>
+        Made by <a href="https://sihamhadi.com/">srh</a>
+      </p>
       {getYear.getFullYear()}
     </footer>
   );

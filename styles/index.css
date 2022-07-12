@@ -202,6 +202,7 @@ p {
   line-height: 3rem;
   white-space: break-spaces;
 }
+
 .callout {
   display: flex;
   justify-content: center;
@@ -380,13 +381,16 @@ footer {
   height: 1rem;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 }
 footer p {
+  letter-spacing: 0.2rem;
   padding-right: 0.5rem;
-  font-size: 1.5rem;
 }
-
+footer a {
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
 .error-404 {
   display: flex;
   height: 100vh;
@@ -395,7 +399,8 @@ footer p {
   font-size: 4rem;
   justify-content: center;
 }
-.error-404 a {
+.error-404 a,
+a {
   text-decoration: none;
   color: var(--background);
   font-size: 2rem;
