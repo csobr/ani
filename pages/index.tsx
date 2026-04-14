@@ -4,7 +4,6 @@ import {GetServerSideProps} from 'next';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 
-import {Client} from '../prismic-configuration';
 import PlausibleProvider from 'next-plausible';
 import ClickOutsideRef from '../Hooks/ClickedOutside';
 
@@ -125,7 +124,7 @@ const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
   }, []);
 
   return (
-    <PlausibleProvider domain="ani-brain.com">
+    <div>
       <Head>
         <title>Ani - The teenage brain</title>
       </Head>
@@ -152,24 +151,8 @@ const Home = ({kompisar, kanslor, beloning, somn}: Props) => {
         <Highlight getRef={partFourRef} content={somn} />
         <Footer />
       </main>
-    </PlausibleProvider>
+    </div>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const client = Client();
-  const kompisar = await client.getByUID('page', 'kompisar', undefined).catch((error) => {
-    console.log('failed to load content', error);
-  });
-  const beloning = await client.getByUID('page', 'beloning', undefined).catch((error) => {
-    console.log('failed to load content', error);
-  });
-  const kanslor = await client.getByUID('page', 'kanslor', undefined).catch((error) => {
-    console.log('failed to load content', error);
-  });
-  const somn = await client.getByUID('page', 'somn', undefined).catch((error) => {
-    console.log('failed to load content', error);
-  });
-  return {props: {kanslor, beloning, kompisar, somn}};
-};
 export default Home;

@@ -1,6 +1,6 @@
-import {initializeApp, FirebaseOptions, getApp} from 'firebase/app';
-import {getAuth} from 'firebase/auth';
-import {getDatabase} from 'firebase/database';
+import {initializeApp, FirebaseOptions, getApp, FirebaseApp} from 'firebase/app';
+import {getAuth, Auth} from 'firebase/auth';
+import {getDatabase, Database} from 'firebase/database';
 
 let config = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -20,6 +20,25 @@ function createFirebaseApp(config: FirebaseOptions) {
   }
 }
 
-const app = createFirebaseApp(config);
-export const auth = getAuth(app);
-export const db = getDatabase(app);
+let _app: FirebaseApp | undefined;
+let _auth: Auth | undefined;
+let _db: Database | undefined;
+
+function getFirebaseApp() {
+  if (!_app) _app = createFirebaseApp(config);
+  return _app;
+}
+
+export const auth = new Proxy({} as Auth, {
+  get(_, prop) {
+    if (!_auth) _auth = getAuth(getFirebaseApp());
+    return (_auth as any)[prop];
+  },
+});
+
+export const db = new Proxy({} as Database, {
+  get(_, prop) {
+    if (!_db) _db = getDatabase(getFirebaseApp());
+    return (_db as any)[prop];
+  },
+});
